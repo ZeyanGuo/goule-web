@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购了收货地址管理</title>
+		
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/footer.css" rel="stylesheet" />
+		<link href="css/shoppingCart.css" rel="stylesheet" />
+		<link href="css/addressManagement.css" rel="stylesheet" />
+		<script src="js/frameWork/jquery-2.1.1.min.js"></script>
+		<script src="js/utils/util.js"></script>
+	</head>
+	<script>
+		document.documentElement.style.fontSize = screen.width / 7.5 + 'px';
+	</script>
+	<body>
+		<div class="goule-shopping-noGoods" style="display: none;">
+			<p class="goule-shopping-hint">还没有收货地址哟T-T</p>
+			<p class="goule-shopping-hint small">快创建一个吧</p>
+			<a class = "goule-shopping-noGoods-btn">去创建</a>
+		</div>
+		<div class="goule-shopping-container">
+			<div class = "goule-shopping-controller">
+				<div class = "goule-shopping-smlContainer">
+					<i class="iconfont1" style="color: red;">&#xe60f;</i>
+					<span>我的收获地址</span>
+				</div>
+				<div class = "goule-shopping-smlContainer right " id = "editBtn"><!-- goule-shopping-edit-select -->
+					<i class="iconfont1" >&#xe685;</i>	
+					<span class = "goule-shopping-edit " >编辑</span>
+				</div>
+			</div>
+			<div class = "goule-address-item">
+				<div class="goule-address-item-info">
+					<p>倪妮</p>
+					<p>重庆市渝北区天生街2号西南大学</p>
+					<p>150xxxx8951</p>
+				</div>
+				<div class="goule-address-item-operation gray" style="display: none;">
+					<p>默认地址</p>
+				</div>
+				<div class="goule-address-item-operation green" style="display: none;">
+					<p>设为默认</p>
+				</div>
+				<div class="goule-address-item-operation red" style="display: inline-block;">
+					<p>删除</p>
+				</div>
+			</div>
+		</div>
+		
+		<footer class = "goule-footer-area">
+			<div data-tag = "01">
+				<i class="iconfont ">&#xe653;</i>
+				<p class = "goule-footer-p ">商城首页</p>
+			</div>
+			<div data-tag = "02">
+				<i class="iconfont ">&#xe6a8;</i>
+				<p class = "goule-footer-p ">分类查询</p>
+			</div>
+			<div data-tag = "03">
+				<i class="iconfont">&#xe619;</i>
+				<p class = "goule-footer-p">购物信息</p>
+			</div>
+			<div data-tag = "04">
+				<i class="iconfont">&#xe649;</i>
+				<p class = "goule-footer-p">个人中心</p>
+			</div>
+		</footer>
+		<!--自定义提示框-->
+		<div class="goule-comfirm" style="display: none;">
+			<p id = "comfirm-text">确定删除</p>
+			<button id = "comfirm-cancle">取消</button>
+			<button id = "comfirm-sure">确定</button>
+		</div>
+		<div class="Mark" style="display: none;">
+			
+		</div>
+		<div class="goule-loading" style="display: none;">
+			<p class="goule-img-container">
+				<img src="img/gif/loading.gif" />
+			</p>
+		</div>
+		<div class="Mark-white" style="display: none;">
+			
+		</div>
+		<div class="goule-hint" style="display: none;">
+			<p id = "hint-text">确定删除</p>
+			<button id = "hint-sure">确定</button>
+		</div>
+		<!--  自定义提示框  结束  -->
+		<script src="config/config.js"></script>
+		<script src="js/footerScript.js"></script>
+		<!--<script src="js/addressManagement.js"></script>-->
+		<script src="js/inputNumberEdit.js"></script>
+		<script src="js/comfirm.js"></script>
+	</body>
+</html>

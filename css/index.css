@@ -1,0 +1,182 @@
+/*
+ **
+ 
+ 主页面CSS代码
+ 
+  
+ **
+*/
+
+/*unicode 图标 start*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../static/iconfont/iconfont.eot');
+  src: url('../static/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../static/iconfont/iconfont.woff') format('woff'),
+  url('../static/iconfont/iconfont.ttf') format('truetype'),
+  url('../static/iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+a{
+	text-decoration: none;
+}
+
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*unicode 图标 end*/
+.goule-search-area{
+	font-size:0 ;
+	margin: 0;
+	padding: 0;
+	background: #F9FCFB;
+	height: .9rem;
+	text-align: center;
+	border-bottom: 1px solid lightgray;
+}
+.goule-search-area>input{
+	vertical-align: top;
+	width: 79%;
+	height: .6rem;
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: 0;
+	margin-right: 1%;
+	margin-top: .15rem;
+	line-height: .5rem;
+	text-indent: .2rem;
+	border-radius: .1rem .1rem .1rem .1rem;
+	font-size: .3rem;
+	background: #dfdfdf;
+}
+.goule-search-area>button{
+	vertical-align: top;
+	width: 15%;
+	background: #dfdfdf;
+	height: .6rem;
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: 0;
+	margin-top: .15rem;
+	font-size: .3rem;
+	line-height: .5rem;
+	border-radius: .1rem .1rem .1rem .1rem;
+	color: black;
+}
+.swipslider{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.sw-next-prev{
+	display: none;
+}
+.sw-slides img{
+	width: 100%;
+	height: 5rem;
+}
+.goule-icon{
+	background: white;
+	font-size: 0;
+}
+.goule-icon-item{
+	display: inline-block;
+	width: 33.3%;
+	color: gray;
+	text-align: center;
+	padding: .3rem 0 .3rem 0;
+}
+.goule-icon-item i{
+	font-size: .7rem;
+}
+.goule-icon-item span{
+	font-size: .3rem;
+}
+.goule-goods-show{
+	background: #f8f8f8;
+}
+.goule-goods-classify{
+	font-size: 0;
+	width: 96%;
+	margin: 0 auto;
+}
+.goule-goods-classify-title{
+	border-bottom: 1px solid #969696;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: .2rem;
+}
+.goule-goods-classify-title>span{
+	color: #969696;
+	font-size: .3rem;
+}
+.goule-goods-classify-title>a{
+	color: #969696;
+	font-size: .3rem;
+	float: right;
+}
+.goule-goods-classify-container{
+	font-size: .5rem;
+	width: 100%;
+	font-size: 0;
+}
+.goule-goods-info{
+	width: calc(50% - .2rem);
+	height: calc(50% - .2rem);
+	box-sizing: border-box;
+	display: inline-block;
+	margin: .1rem;
+	background: white;
+	border-radius: .1rem;
+	box-shadow: 1px 1px 10px lightgray;
+	overflow: hidden;
+}
+.goule-goods-img{
+	background: lightgray;
+	width: 100%;
+}
+.goule-goods-name{
+	margin: 0;
+	padding: 0;
+	font-size: .3rem;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: black;
+	text-indent: .05rem;
+	padding: .2rem 0 .1rem 0;
+}
+.goule-goods-others{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	margin-right: .2rem;
+}
+.goule-goods-others span{
+	font-family: arial;
+	font-size: .3rem;
+	color: red;
+	display: inline-block;
+	padding-bottom: .2rem;
+}
+.goule-more-info{
+	background: #f8f8f8;
+	padding: .3rem 0 .3rem 0 ;
+	font-size: 0;
+	text-align: center;
+}
+.goule-more-info a{
+	color: gray;
+	font-size:.4rem ;
+	
+}
+
+

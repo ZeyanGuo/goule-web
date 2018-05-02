@@ -1,0 +1,120 @@
+/*
+ **
+ 
+ 分类查询页面CSS代码
+ 
+  
+ **
+*/
+
+/*unicode 图标 start*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../static/iconfont/iconfont.eot');
+  src: url('../static/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../static/iconfont/iconfont.woff') format('woff'),
+  url('../static/iconfont/iconfont.ttf') format('truetype'),
+  url('../static/iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+a{
+	text-decoration: none;
+}
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+	font-size: 0;
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.goule-classify{
+	height: calc(100% - 1.2rem);
+	margin: 0;
+	padding: 0;
+	width: 28%;
+	background: #f8f8f8;
+	overflow: scroll;
+	border-right: 1px solid lightgray;
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: top;
+}
+.goule-classify-item{
+	border-left: 2px solid #f8f8f8;
+	display: flex;
+	height: 2rem;
+	border-bottom: 1px solid lightgray;
+	align-items:center;
+}
+.goule-classify-active{
+	background: white;
+	border-left: 2px solid red;
+}
+.goule-classify-item p{
+	margin: 0;
+	padding: 0;
+	font-size: .3rem;
+	width: 1.4rem;
+	margin: 0 auto;
+	
+}
+.goule-classify-container{
+	display: inline-block;
+	width: 72%;
+	vertical-align: top;
+	overflow: scroll;
+	height: calc(100% - 1.2rem);
+}
+.goule-classify-container > p{
+	font-size: .3rem;
+	text-indent: .3rem;
+	margin: 0;
+	padding: .2rem 0 .2rem 0;
+	background: #f8f8f8;
+	border-bottom: 1px solid lightgray;
+}
+.goule-classify-container-item{
+	border-bottom: 1px solid lightgray;
+	margin-left: .2rem;
+	padding: .2rem 0 .2rem 0;
+	height: 1.4rem;
+	display: block;
+}
+.goule-classify-container-item-text{
+	display: inline-block;
+	width: calc(100% - 1.4rem);
+	height: 1.4rem;
+	vertical-align: top;
+}
+.goule-classify-container-item > img{
+	width: 1.4rem;
+	height: 1.4rem;
+	vertical-align: top;
+}
+.goule-classify-container-item-name{
+	font-size: .3rem;
+	margin: 0;
+	padding: 0 0.2rem .1rem 0.2rem;
+	overflow: hidden;
+	white-space: nowrap;
+	color: black;
+	text-overflow: ellipsis;
+}
+.goule-classify-container-item-price{
+	margin: 0;
+	padding: 0;
+	padding: .2rem 0 0 .2rem;
+	font-size: .4rem;
+	color: red;
+	font-family: arial;
+}
+.load-more{
+	text-align: center;
+}

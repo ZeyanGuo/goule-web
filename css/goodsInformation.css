@@ -1,0 +1,218 @@
+/*
+ **
+ 
+ 商品信息页面CSS代码
+ 
+  
+ **
+*/
+@font-face {
+  font-family: 'iconfont1';
+  src: url('../static/iconfont/iconfont1.eot');
+  src: url('../static/iconfont/iconfont1.eot?#iefix') format('embedded-opentype'),
+  url('../static/iconfont/iconfont1.woff') format('woff'),
+  url('../static/iconfont/iconfont1.ttf') format('truetype'),
+  url('../static/iconfont/iconfont1.svg#iconfont') format('svg');
+}
+.iconfont1{
+  font-family:"iconfont1" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../static/iconfont/iconfont.eot');
+  src: url('../static/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../static/iconfont/iconfont.woff') format('woff'),
+  url('../static/iconfont/iconfont.ttf') format('truetype'),
+  url('../static/iconfont/iconfont.svg#iconfont') format('svg');
+}
+button{
+	-webkit-appearance: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	font-family: arial;
+	background: #F9FCFB;
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.swipslider{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	padding: 0 !important;
+}
+.sw-next-prev{
+	display: none;
+}
+.sw-slides img{
+	width: 100%;
+	height: 100%;
+}
+.goule-goods-video{
+	width: 100%;
+	background: black;
+}
+.goule-goods-base-info{
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	background: white;
+}
+.goule-goods-base-info p{
+	font-size: .3rem;
+	text-indent: .2rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.goule-goods-price{
+	color: red;
+	font-size: .4rem;
+	
+}
+.goule-goods-store{
+	float: right;
+	margin-right: .2rem;
+}
+.goule-goods-info-item{
+	font-size: 0;
+	border-bottom: 1px solid lightgray;
+	color: gray;
+	background: white;
+}
+.goule-goods-info-item > p:first-of-type{
+	font-size: .3rem;
+	display: inline-block;
+	width: 2.5rem;
+	text-indent: .2rem;
+}
+.goule-goods-info-item > p:last-of-type{
+	font-size: .3rem;
+	display: inline-block;
+	margin-left: .3rem;
+}
+.goule-goods-short-video{
+	margin-top: 1rem;
+}
+.goule-goods-short-video > p{
+	font-size: .4rem;
+	text-align: center;
+	color: gray;
+}
+.goule-goods-operate-footer{
+	position: fixed;
+	bottom: 1.2rem;
+	height: .8rem;
+	background: white;
+	width: 100%;
+	font-size: 0;
+	line-height: .8rem;
+	border-top: 1px solid lightgray;
+}
+.goule-goods-operate-footer i {
+	font-size: .5rem;
+	color: gray;
+	padding-left:.2rem ;
+	padding-right: .1rem;
+}
+.icon-describe{
+	font-size: .3rem;
+	color: gray;
+	vertical-align: top;
+}
+.goule-goods-operate-footer button{
+	display: inline-block;
+	float: right;
+	height: .8rem;
+	border: none;
+	font-size: .3rem;
+	width: 2.5rem;
+	color: white;
+	margin: 0;
+}
+.orange-bck{
+	background: #f4a42f;
+}
+.red-bck{
+	background: red;
+}
+.goule-goods-operate-footer-holder{
+	width: 100%;
+	height: .8rem;
+}
+.goule-goods-info-relate,.goule-goods-introduction{
+	margin-top: .4rem;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	background: white;
+}
+.goule-goods-info-relate>p{
+	margin: 0;
+	text-indent: .2rem;
+	font-size: .3rem;
+	color: black;
+	line-height: .8rem;
+	border-bottom: 1px solid lightgray;
+}
+.goule-goods-vertical-scroll{
+	overflow-x: scroll;  
+	overflow-y: hidden;   
+	white-space: nowrap; 
+	font-size: 0;
+} 
+.goule-goods-info-scroll {
+	display: inline-block;
+	width: 30%;
+	padding: .2rem;	
+	color: black;
+}
+.goule-goods-info-scroll img{
+	width: 100%;	
+}
+.goule-goods-info-scroll .goule-goods-info-scroll-describe{
+	font-size: .2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.goule-goods-info-scroll>p{
+	margin: 0;
+	margin-top: .1rem;
+	padding: 0;
+	border: none;
+	text-indent: 0;
+}
+.goule-goods-info-scroll .goule-goods-info-scroll-price{
+	margin: 0;
+	padding: 0;
+	color: red;
+	font-size: .3rem;	
+}
+
+.goule-goods-introduction>p{
+	margin: 0;
+	text-indent: .2rem;
+	font-size: .3rem;
+	color: black;
+	line-height: .8rem;
+	border-bottom: 1px solid lightgray;
+}
+.goule-goods-introduction>img{
+	width: 100%;
+}
+.goule-goods-introduction{
+	font-size: 0;
+}

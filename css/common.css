@@ -1,0 +1,111 @@
+body{
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+html{
+	height: 100%;
+}
+.goule-comfirm{
+	position: fixed;
+	z-index: 20;
+	border-radius: .2rem;
+	width: 66%;
+	height: 2.5rem;
+	left: 17%;
+	top: calc(50% - 1.25rem);
+	background: white;
+	font-size: 0;
+}
+.goule-comfirm >p {
+	height: 1.5rem;
+	line-height: 1.5rem;
+	margin: 0;
+	padding: 0;
+	font-size: .3rem;
+	text-align: center;
+}
+.goule-comfirm > button{
+	height: 1rem;
+	border: none;
+	font-size: .3rem;
+	width: 50%;
+	box-sizing: border-box;
+	line-height: 1rem;
+	border-top: 1px solid lightgray;
+}
+.goule-comfirm > button:first-of-type{
+	border-right: 1px solid lightgray;
+}
+.Mark{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 15;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.3);	
+}
+.Mark-white{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 15;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.1);	
+}
+.goule-loading{
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: .3rem;
+	background: rgba(0,0,0,.7);
+	position: absolute;
+	z-index: 20;
+	top: calc(50% - 1.25rem);
+	left: calc(50% - 1.25rem);
+	font-size: 0;
+}
+.goule-loading img{
+	width: 1.45rem;
+	height: 1.45rem;
+	border: none;
+	outline: none;
+	vertical-align: middle;
+}
+.goule-img-container{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	line-height: 2.5rem;
+}
+
+.goule-hint{
+	position: fixed;
+	z-index: 20;
+	border-radius: .2rem;
+	width: 66%;
+	height: 2.5rem;
+	left: 17%;
+	top: calc(50% - 1.25rem);
+	background: white;
+	font-size: 0;
+}
+.goule-hint >p {
+	height: 1.5rem;
+	line-height: 1.5rem;
+	margin: 0;
+	padding: 0;
+	font-size: .3rem;
+	text-align: center;
+}
+
+.goule-hint > button{
+	height: 1rem;
+	border: none;
+	font-size: .3rem;
+	width: 100%;
+	box-sizing: border-box;
+	line-height: 1rem;
+	border-top: 1px solid lightgray;
+}

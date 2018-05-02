@@ -1,0 +1,247 @@
+
+@font-face {
+  font-family: 'iconfont1';
+  src: url('../static/iconfont/iconfont1.eot');
+  src: url('../static/iconfont/iconfont1.eot?#iefix') format('embedded-opentype'),
+  url('../static/iconfont/iconfont1.woff') format('woff'),
+  url('../static/iconfont/iconfont1.ttf') format('truetype'),
+  url('../static/iconfont/iconfont1.svg#iconfont') format('svg');
+}
+.iconfont1{
+  font-family:"iconfont1" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../static/iconfont/iconfont.eot');
+  src: url('../static/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../static/iconfont/iconfont.woff') format('woff'),
+  url('../static/iconfont/iconfont.ttf') format('truetype'),
+  url('../static/iconfont/iconfont.svg#iconfont') format('svg');
+}
+button{
+	-webkit-appearance: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	font-family: arial;
+	background: #F9FCFB;
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.goule-order-post-place{
+	background: white;
+	border-bottom: 1px solid lightgray;
+}
+.goule-order-operation-title{
+	background: white;
+	
+	font-size: 0;
+	height: 1rem;
+	line-height: 1rem;
+}
+.goule-order-operation-title i{
+	color: red;
+	font-size: .6rem;
+	vertical-align: middle;
+	padding-left: .2rem;
+	padding-right: .2rem;
+}
+.goule-order-operation-title span{
+	font-size: .4rem;
+	vertical-align: middle;
+}
+.goule-order-post-place-item {
+	border-top: 1px solid lightgray;
+}
+.goule-order-post-place-item{
+	padding: 0;
+    margin: 0;
+    position: relative;
+    height: 1.9rem;
+    margin: .1rem 0 .1rem 0;
+    background: white;
+}
+.goule-order-post-place-item i{
+	display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+    position: absolute;
+    top: .6rem;
+    left: .2rem;
+    z-index: 1;
+}
+
+.goule-post-info{
+	display: inline-block;
+    width: calc(100% - .9rem);
+    margin-top: .1rem;
+    height: 1.8rem;
+    vertical-align: top;
+    font-size: 0;
+    margin-left: .9rem;
+}
+.goule-post-info p {
+	margin: .1rem;
+	padding: 0;
+	font-size: .3rem;
+}
+.goule-order-info{
+	margin-top: .4rem;
+	overflow: hidden;
+	background: white;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+}
+.goule-order-base-info{
+	margin-left: .2rem;
+}
+.goule-order-base-info img{
+	width: 2rem;
+	height: 2rem;
+	vertical-align: top;
+	margin-top: .2rem;
+	margin-bottom: .2rem;
+}
+.goule-order-goods-baseInfo{
+	display: inline-block;
+	width: calc(100% - 2.3rem);
+	vertical-align: top;
+	font-size: 0;
+}
+.goule-order-goods-name{
+	margin: 0;
+	padding: 0;
+	font-size: .3rem;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-top: .2rem;
+}
+.goule-order-goods-price{
+	color: red;
+	font-size: .4rem;
+	margin-top: 1rem;
+}
+.goule-order-goods-num-component{
+	float: right;
+	margin-top: .9rem;
+	border: 1px solid lightgray;
+	border-radius: .1rem;
+	margin-right: .2rem;	
+}
+
+.goule-order-goods-num-component input{
+	border-radius: 0;
+	display: inline-block;
+	margin: 0;
+	text-align: center;
+	font-size: .3rem;
+	border: none;
+	width: .4rem;
+	vertical-align: middle;
+	border-right: 1px solid lightgray ;
+	border-left:1px solid lightgray ;
+	color: gray;
+}
+.goule-order-goods-num-component i{
+	vertical-align: middle;
+	color: gray;
+	padding-left: .2rem;
+	padding-right: .2rem;
+}
+
+.goule-order-other-info{
+	border-top: 1px solid lightgray;
+	margin-left: .2rem;
+	font-size: 0;
+	line-height: .8rem;
+}
+.goule-order-other-info > p {
+	margin: 0;
+	padding: 0;
+	font-size: .3rem;
+} 
+.goule-order-other-info > p:first-of-type{
+	display: inline-block;
+	width: 3rem;
+}
+.goule-order-other-info > p:last-of-type{
+	color: gray;
+	text-align: right;
+	box-sizing: border-box;
+	padding-right: .2rem;
+	display: inline-block;
+	width: calc(100% - 3rem);
+}
+.invoice-select{
+	-webkit-appearance: none;
+	border: none;
+	outline: none;
+	padding: 0 0 0 .3rem;
+	font-size: .3rem;
+	 direction: rtl;
+}
+.invoice-select option{
+	text-align: right;
+}
+.border-bottom{
+	border-bottom: 1px solid lightgray;
+}
+.goule-order-comment{
+	overflow: hidden;
+	
+	background: white;
+}
+.goule-order-comment p{
+	font-size: .3rem;
+	margin-left: .2rem;
+
+}
+.goule-order-comment textarea{
+	width: 98%;
+	height: 1.8rem;
+	border: none;
+	font-size: .3rem;
+	text-indent: .6rem;
+}
+
+.goule-order-pay-footer{
+	position: fixed;
+	height: .8rem;
+	background: white;
+	width: 100%;
+	bottom: 1.2rem;
+	border-top: 1px solid lightgray;
+}
+.goule-order-pay-footer p{
+	float:right;
+	font-size: .3rem;
+	background: red;
+	display: inline-block;
+	width: 3rem;
+	color: white;
+	text-align: center;
+	height: .8rem;
+	margin: 0;
+	padding: 0;
+	line-height: .8rem;
+}
+
+.goule-order-pay-footer-holder{
+	width: 100%;
+	height: .8rem;
+}

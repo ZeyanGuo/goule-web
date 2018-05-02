@@ -1,0 +1,165 @@
+/*
+ **
+ 
+ 推荐页面CSS代码
+ 
+  
+ **
+*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../static/iconfont/iconfont.eot');
+  src: url('../static/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../static/iconfont/iconfont.woff') format('woff'),
+  url('../static/iconfont/iconfont.ttf') format('truetype'),
+  url('../static/iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+a{
+	text-decoration: none;
+}
+
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.goule-recommend-title{
+	font-size: .4rem;
+	color: gray;
+	text-align: center;
+	padding: .3rem !important;
+}
+
+.goule-search-area{
+	font-size:0 ;
+	margin: 0;
+	padding: 0;
+	background: #F9FCFB;
+	height: .9rem;
+	text-align: center;
+	border-bottom: 1px solid lightgray;
+}
+.goule-search-area>input{
+	vertical-align: top;
+	width: 79%;
+	height: .6rem;
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: 0;
+	margin-right: 1%;
+	margin-top: .15rem;
+	line-height: .5rem;
+	text-indent: .2rem;
+	border-radius: .1rem .1rem .1rem .1rem;
+	font-size: .3rem;
+	background: #dfdfdf;
+}
+.goule-search-area>button{
+	vertical-align: top;
+	width: 15%;
+	background: #dfdfdf;
+	height: .6rem;
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: 0;
+	margin-top: .15rem;
+	font-size: .3rem;
+	line-height: .5rem;
+	border-radius: .1rem .1rem .1rem .1rem;
+	color: black;
+}
+.goule-recommend-container{
+	background: #f8f8f8;
+}
+.goule-recommend-container > p{
+	margin: 0;
+	padding: 0;
+}
+.goule-goods-classify-container{
+	font-size: .5rem;
+	width: 100%;
+	font-size: 0;
+}
+.goule-goods-info{
+	width: calc(50% - .2rem);
+	height: calc(50% - .2rem);
+	box-sizing: border-box;
+	display: inline-block;
+	margin: .1rem;
+	background: white;
+	border-radius: .1rem;
+	box-shadow: 1px 1px 10px lightgray;
+	overflow: hidden;
+}
+.goule-goods-img{
+	background: lightgray;
+	width: 100%;
+}
+.goule-goods-name{
+	margin: 0;
+	padding: 0;
+	font-size: .3rem;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: black;
+	text-indent: .05rem;
+	padding: .2rem 0 .1rem 0;
+}
+.goule-goods-others{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	margin-right: .2rem;
+}
+.goule-goods-others span{
+	font-family: arial;
+	font-size: .3rem;
+	color: red;
+	display: inline-block;
+	padding-bottom: .2rem;
+}
+.goule-search-controler{
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	background: #f8f8f8;
+}
+.goule-search-controler-btns{
+	
+	width: 94%;
+	margin: 0 auto;
+}
+.goule-search-controler p{
+	margin: 0;
+	padding: 0;
+	margin-bottom: .2rem;
+	display: inline-block;
+	width: 50%;
+	font-size: .3rem;
+	background: white;
+	text-align: center;
+	height: .7rem;
+	line-height: .7rem;
+	cursor: pointer;
+}
+.next{
+	border: 1px solid lightgray;
+	border-radius: 0 .1rem .1rem 0;
+	box-sizing: border-box;
+}
+.prev{
+	border: 1px solid lightgray;
+	border-radius: .1rem 0 0 .1rem;
+	box-sizing: border-box;
+}
+.btn-disable{
+	color: lightgray;
+	background: #f8f8f8 !important;
+}

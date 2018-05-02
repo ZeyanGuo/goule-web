@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购了购物车</title>
+		
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/footer.css" rel="stylesheet" />
+		<link href="css/orderManagement.css" rel="stylesheet" />
+		
+		<script src="js/frameWork/jquery-2.1.1.min.js"></script>
+		<script src="js/utils/util.js"></script>
+	</head>
+	<script>
+		document.documentElement.style.fontSize = screen.width / 7.5 + 'px';
+	</script>
+	<body>
+		<div class="goule-shopping-noGoods" style="display: none;">
+			<p class="goule-shopping-hint">还没有订单哟T-T</p>
+			<p class="goule-shopping-hint small">快去看看吧</p>
+			<a href = "queryClassify.html" class = "goule-shopping-noGoods-btn">去逛逛</a>
+		</div>
+		<div class="goule-order-nav">
+			<a class="goule-order-nav-item">
+				<span>待付款</span>
+			</a>
+			<a class="goule-order-nav-item">
+				<span>待发货</span>
+			</a>
+			<a class="goule-order-nav-item">
+				<span>已发货</span>
+			</a>
+			<a class="goule-order-nav-item">
+				<span class="goule-order-nav-item-select">已完成</span>
+			</a>
+		</div>
+		<div class="goule-order-item">
+			<div class="goule-order-title">
+				<span class="goule-order-status">已取消</span>
+				<div class="goule-order-price-container">
+					<span >成交价：</span>
+					<span class="goule-order-price">¥2058.00</span>
+				</div>
+			</div>
+			<div class="goule-order-info">
+				<img src="img/testImg/item.jpeg" />
+				<div class = "goule-order-info-container">
+					<p class="goule-order-info-name">【直供】天之蓝</p>
+					<p class="goule-order-info-price">¥589</p>
+					<p class="goule-order-info-store">x3</p>
+				</div>
+			</div>
+			<div class="goule-order-other-info">
+				<p>
+					<span>共</span>
+					<span class="goule-order-total-num">4</span>
+					<span>件商品</span>
+				</p>
+			</div>
+		</div>
+		<div class="goule-order-item">
+			<div class="goule-order-title">
+				<span class="goule-order-status">已取消</span>
+				<div class="goule-order-price-container">
+					<span >成交价：</span>
+					<span class="goule-order-price">¥2058.00</span>
+				</div>
+			</div>
+			<div class="goule-order-info">
+				<img src="img/testImg/item.jpeg" />
+				<div class = "goule-order-info-container">
+					<p class="goule-order-info-name">【直供】天之蓝</p>
+					<p class="goule-order-info-price">¥589</p>
+					<p class="goule-order-info-store">x3</p>
+				</div>
+			</div>
+			<div class="goule-order-other-info">
+				<p>
+					<span>共</span>
+					<span class="goule-order-total-num">4</span>
+					<span>件商品</span>
+				</p>
+			</div>
+		</div>
+		<div class="goule-order-item">
+			<div class="goule-order-title">
+				<span class="goule-order-status">已取消</span>
+				<div class="goule-order-price-container">
+					<span >成交价：</span>
+					<span class="goule-order-price">¥2058.00</span>
+				</div>
+			</div>
+			<div class="goule-order-info">
+				<img src="img/testImg/item.jpeg" />
+				<div class = "goule-order-info-container">
+					<p class="goule-order-info-name">【直供】天之蓝</p>
+					<p class="goule-order-info-price">¥589</p>
+					<p class="goule-order-info-store">x3</p>
+				</div>
+			</div>
+			<div class="goule-order-other-info">
+				<p>
+					<span>共</span>
+					<span class="goule-order-total-num">4</span>
+					<span>件商品</span>
+				</p>
+			</div>
+		</div>
+		<div class="goule-order-item">
+			<div class="goule-order-title">
+				<span class="goule-order-status">已取消</span>
+				<div class="goule-order-price-container">
+					<span >成交价：</span>
+					<span class="goule-order-price">¥2058.00</span>
+				</div>
+			</div>
+			<div class="goule-order-info">
+				<img src="img/testImg/item.jpeg" />
+				<div class = "goule-order-info-container">
+					<p class="goule-order-info-name">【直供】天之蓝</p>
+					<p class="goule-order-info-price">¥589</p>
+					<p class="goule-order-info-store">x3</p>
+				</div>
+			</div>
+			<div class="goule-order-other-info">
+				<p>
+					<span>共</span>
+					<span class="goule-order-total-num">4</span>
+					<span>件商品</span>
+				</p>
+			</div>
+		</div>
+		<div class="goule-order-item">
+			<div class="goule-order-title">
+				<span class="goule-order-status">已取消</span>
+				<div class="goule-order-price-container">
+					<span >成交价：</span>
+					<span class="goule-order-price">¥2058.00</span>
+				</div>
+			</div>
+			<div class="goule-order-info">
+				<img src="img/testImg/item.jpeg" />
+				<div class = "goule-order-info-container">
+					<p class="goule-order-info-name">【直供】天之蓝</p>
+					<p class="goule-order-info-price">¥589</p>
+					<p class="goule-order-info-store">x3</p>
+				</div>
+			</div>
+			<div class="goule-order-other-info">
+				<p>
+					<span>共</span>
+					<span class="goule-order-total-num">4</span>
+					<span>件商品</span>
+				</p>
+			</div>
+		</div>
+		<div class="goule-footer-area-holder"></div>
+		<footer class = "goule-footer-area">
+			<div data-tag = "01">
+				<i class="iconfont ">&#xe653;</i>
+				<p class = "goule-footer-p ">商城首页</p>
+			</div>
+			<div data-tag = "02">
+				<i class="iconfont ">&#xe6a8;</i>
+				<p class = "goule-footer-p ">分类查询</p>
+			</div>
+			<div data-tag = "03">
+				<i class="iconfont">&#xe619;</i>
+				<p class = "goule-footer-p">购物信息</p>
+			</div>
+			<div data-tag = "04">
+				<i class="iconfont">&#xe649;</i>
+				<p class = "goule-footer-p">个人中心</p>
+			</div>
+		</footer>
+		<div class="goule-comfirm" style="display: none;">
+			<p id = "comfirm-text">确定删除</p>
+			<button id = "comfirm-cancle">取消</button>
+			<button id = "comfirm-sure">确定</button>
+		</div>
+		<div class="Mark" style="display: none;">
+			
+		</div>
+		<script src="config/config.js"></script>
+		<script src="js/footerScript.js"></script>
+		<script src="js/orderManagement.js"></script>
+		<script src="js/inputNumberEdit.js"></script>
+		<script src="js/comfirm.js"></script>
+	</body>
+</html>

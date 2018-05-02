@@ -1,0 +1,170 @@
+/*
+ **
+ 
+ 订单管理页面CSS代码
+ 
+  
+ **
+*/
+
+/*unicode 图标 start*/
+@font-face {
+  font-family: 'iconfont1';
+  src: url('../static/iconfont/iconfont1.eot');
+  src: url('../static/iconfont/iconfont1.eot?#iefix') format('embedded-opentype'),
+  url('../static/iconfont/iconfont1.woff') format('woff'),
+  url('../static/iconfont/iconfont1.ttf') format('truetype'),
+  url('../static/iconfont/iconfont1.svg#iconfont') format('svg');
+}
+.iconfont1{
+  font-family:"iconfont1" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+	background: #F9FCFB;
+	font-family: arial;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../static/iconfont/iconfont.eot');
+  src: url('../static/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../static/iconfont/iconfont.woff') format('woff'),
+  url('../static/iconfont/iconfont.ttf') format('truetype'),
+  url('../static/iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+a{
+	text-decoration: none;
+}
+
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.goule-shopping-noGoods{
+	padding-top:1.5rem ;
+	text-align: center;
+}
+.goule-shopping-hint{
+	margin: 0;
+	padding: 0;
+	font-size: .4rem;
+	color: gray;
+}
+.small{
+	font-size: .3rem;
+}
+.goule-shopping-noGoods-btn{
+	font-size: .4rem;
+	border: 1px solid red;
+	color: red;
+	padding: .3em 1.2em;
+	border-radius: .3em;	
+}
+.goule-order-nav{
+	background: white;
+	height: .8rem;
+	border-bottom: 1px solid lightgray;
+	font-size: 0;
+}
+.goule-order-nav-item{
+	display: inline-block;
+	width: 25%;
+	text-align: center;
+	color: black;
+	line-height: .8rem;
+}
+.goule-order-nav-item span{
+	font-size: .3rem;
+}
+.goule-order-nav-item .goule-order-nav-item-select{
+	color: red;
+}
+.goule-order-item{
+	margin-top: .3rem;
+	overflow: hidden;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	font-size: 0;
+	background: white;
+}
+.goule-order-title{
+	border-bottom: 1px solid lightgray;
+	font-size: .3rem;
+	line-height: .8rem;
+	border-bottom: 1px solid lightgray;
+}
+
+.goule-order-status{
+	margin-left: .2rem;
+}
+.goule-order-price-container{
+	display: inline-block;
+	float: right;
+	padding-right: .2rem;
+}
+.goule-order-price{
+	color: red;
+}
+
+.goule-order-info{
+	padding:.2rem;
+	font-size: 0;
+}
+.goule-order-info > img{
+	width: 2rem;
+	height: 2rem;	
+	vertical-align: top;
+}
+.goule-order-info-container{
+	display: inline-block;
+	font-size: .3rem;
+	width: calc(100% - 2.2rem);
+}
+.goule-order-info-container > p {
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+	padding-left:.2rem ;
+}
+.goule-order-info-container .goule-order-info-name {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding-bottom: 1.1rem;
+}
+.goule-order-info-price{
+	display: inline-block;
+	color: red;
+}
+.goule-order-info-store{
+	display: inline-block;
+	float: right;
+	margin-right: .2rem;
+	color: gray;
+}
+.goule-order-other-info{
+	height: .8rem;
+	line-height: .8rem;
+	border-top: 1px solid lightgray;
+}
+.goule-order-other-info > p{
+	margin: 0;
+	padding: 0;
+	font-size: .3rem;
+	color: gray;
+	float: right;
+	margin-right: .2rem;
+}
+

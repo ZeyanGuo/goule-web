@@ -1,0 +1,51 @@
+.goule-address-item{
+	border-bottom: 1px solid lightgray;
+	height: 2rem;
+	background: white;
+	overflow: hidden;
+	font-size: 0;
+
+}
+.goule-address-item-info{
+	display: inline-block;
+	font-size: .3rem;
+	width: 80%;
+	vertical-align: top;
+}
+.goule-address-item-info p{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-left: .2rem;
+	margin-top: .15rem;
+}
+.goule-address-item-operation{
+	display: inline-block;
+	width: 20%;
+	font-size: .3rem;
+	vertical-align: top;
+}
+.goule-address-item-operation p{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	line-height: 2rem;	
+}
+.gray{
+	background: lightgray;
+	color: white;
+}
+.green{
+	background: mediumseagreen;
+	color: white;
+}
+.red{
+	background: red;
+	color: white;
+}
+.goule-shopping-container{
+	height: calc(100% - 1.2rem) !important;
+}

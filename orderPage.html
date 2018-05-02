@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximun-scale=1,user-scalable=no" />
+		<title>购了订单页面</title>
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/footer.css" rel="stylesheet" />
+		<link href="css/orderPage.css" rel="stylesheet" />
+		
+		<script src="js/frameWork/jquery-2.1.1.min.js"></script>
+	</head>
+	<script>
+		document.documentElement.style.fontSize = screen.width / 7.5 + 'px';
+	</script>
+	<body>
+		<div class = "goule-order-container">
+			<div class="goule-order-post-place">
+				<div class="goule-order-operation-title">
+					<i class="iconfont1">&#xe60f;</i>
+					<span>选择收货地址</span>
+				</div>
+				<div class="goule-order-post-place-container">
+					<div class = "goule-order-post-place-item">
+						<i class="goule-post-select"></i>
+						<div class="goule-post-info">
+							<p>倪妮</p>
+							<p>重庆市北碚区天生街2号西南大学</p>
+							<p>150xxxx8951</p>
+						</div>
+					</div>
+					<div class = "goule-order-post-place-item">
+						<i class="goule-post-select"></i>
+						<div class="goule-post-info">
+							<p>倪妮</p>
+							<p>重庆市北碚区天生街2号西南大学</p>
+							<p>150xxxx8951</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="goule-order-info">
+				<div class="goule-order-base-info">
+					<img src="img/testImg/item.jpeg" />
+					<div class="goule-order-goods-baseInfo">
+						<p class="goule-order-goods-name">【封藏大典】双沟珍宝坊</p>
+						<div class="goule-order-goods-num-component">
+							<i class="iconfont1">&#xe643;</i>
+							<input type="number" value="1" />
+							<i class="iconfont1">&#xe641;</i>
+						</div>
+						<p class="goule-order-goods-price">¥1600.00</p>
+					</div>
+				</div>
+				<div class="goule-order-base-info">
+					<img src="img/testImg/item.jpeg" />
+					<div class="goule-order-goods-baseInfo">
+						<p class="goule-order-goods-name">【封藏大典】双沟珍宝坊</p>
+						<div class="goule-order-goods-num-component">
+							<i class="iconfont1">&#xe643;</i>
+							<input type="number" value="1" />
+							<i class="iconfont1">&#xe641;</i>
+						</div>
+						<p class="goule-order-goods-price">¥1600.00</p>
+					</div>
+				</div>
+				<div class="goule-order-other-info ">
+					<p>配送方式</p>
+					<p>包邮</p>
+				</div>
+				
+				<div class="goule-order-other-info ">
+					<p>开具发票</p>
+					<p>
+						<select class="invoice-select" name="select" id="select">
+							<option value="1">否</option>
+							<option value="0">是</option>
+						</select>
+					</p>
+				</div>
+				<div class="goule-order-other-info border-bottom">
+					<p>支付方式</p>
+					<p>
+						<select class="invoice-select" name="payMthod" id="select" >
+							<option value="1">微信支付</option>
+							<option value="0">支付宝</option>
+						</select>
+					</p>
+				</div>
+				<div class="goule-order-comment">
+					<p>订单备注</p>
+					<textarea></textarea>
+				</div>
+				<div class="goule-order-other-info">
+					<p>订单金额</p>
+					<p>¥1600.00</p>
+				</div>
+			</div>
+			
+		</div>
+		<div class="goule-order-pay-footer-holder">
+			
+		</div>
+		<div class="goule-order-pay-footer">
+			<p>立即支付</p>
+		</div>
+		
+		
+		<div class="goule-footer-area-holder"></div>
+		<footer class = "goule-footer-area">
+			<div data-tag = "01">
+				<i class="iconfont">&#xe653;</i>
+				<p class = "goule-footer-p">商城首页</p>
+			</div>
+			<div data-tag = "02">
+				<i class="iconfont">&#xe6a8;</i>
+				<p class = "goule-footer-p">分类查询</p>
+			</div>
+			<div data-tag = "03">
+				<i class="iconfont">&#xe619;</i>
+				<p class = "goule-footer-p">购物信息</p>
+			</div>
+			<div data-tag = "04">
+				<i class="iconfont">&#xe649;</i>
+				<p class = "goule-footer-p">个人中心</p>
+			</div>
+		</footer>
+		<script src="config/config.js"></script>
+		<script src="js/footerScript.js"></script>
+	</body>
+</html>

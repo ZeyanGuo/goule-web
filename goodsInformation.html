@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximun-scale=1,user-scalable=no" />
+		<title>购了商品详情</title>
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/framWork/swipeslider.css" rel="stylesheet"  />
+		<link href="css/footer.css" rel="stylesheet" />
+		<link href="css/goodsInformation.css" rel="stylesheet" />
+		
+		<!--<script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script>-->
+		<script src="js/frameWork/jquery-2.1.1.min.js"></script>
+		<script src="js/frameWork/swipeslider.min.js"></script>
+	</head>
+	<script>
+		document.documentElement.style.fontSize = screen.width / 7.5 + 'px';
+	</script>
+	<body>
+		<div class="goule-goods-gallery">
+			<section>
+				<figure id="full_feature" class="swipslider">
+					<ul class="sw-slides">
+						<li class="sw-slide">
+							<a>
+								<img src="img/testImg/item.jpeg" alt="Summer beach concept">
+							</a>
+						</li>
+						<li class="sw-slide">
+							<a>
+								<img src="img/testImg/page2.png" alt="Lang from Yie Ar Kung Fu">
+							</a>
+						</li>
+						<li class="sw-slide">
+							<a>
+								<img src="img/testImg/page3.png" alt="Tiny Tina">
+							</a>
+						</li>
+						<li class="sw-slide">
+							<a>
+								<img src="img/testImg/page4.png" alt="Tiny Tina from Borderlands 2">
+							</a>
+						</li>
+						<li class="sw-slide">
+							<a>
+								<img src="img/testImg/page5.png" alt="Redhead girl">
+							</a>
+						</li>
+					</ul>
+				</figure>
+			</section>
+		</div>
+		<div class="goule-goods-brief-info">
+			<div class="goule-goods-base-info">
+				<p>双沟珍宝坊 纪念酒 53度</p>
+				<p>
+					<span class="goule-goods-price">¥800.00</span>
+					<span class="goule-goods-store">库存:50</span>
+				</p>
+			</div>
+			<div class="goule-goods-info-item">
+				<p>销量</p>
+				<p>2.1万</p>
+			</div>
+			<div class="goule-goods-info-item">
+				<p>运费</p>
+				<p>包邮</p>
+			</div>
+			<div class="goule-goods-info-relate">
+				<p>相关商品</p>
+				<div class="goule-goods-vertical-scroll">
+					<a href="" class="goule-goods-info-scroll">
+						<img src = "img/testImg/item.jpeg" />
+						<p class="goule-goods-info-scroll-describe">【直供】梦之蓝【直供】梦之蓝【直供】梦之蓝【直供】梦之蓝</p>
+						<p class="goule-goods-info-scroll-price">¥359.00</p>
+					</a>
+					<a href="" class="goule-goods-info-scroll">
+						<img src = "img/testImg/item.jpeg" />
+						<p class="goule-goods-info-scroll-describe">【直供】梦之蓝</p>
+						<p class="goule-goods-info-scroll-price">¥359.00</p>
+					</a>
+					<a href="" class="goule-goods-info-scroll">
+						<img src = "img/testImg/item.jpeg" />
+						<p class="goule-goods-info-scroll-describe">【直供】梦之蓝</p>
+						<p class="goule-goods-info-scroll-price">¥359.00</p>
+					</a>
+					<a href="" class="goule-goods-info-scroll">
+						<img src = "img/testImg/item.jpeg" />
+						<p class="goule-goods-info-scroll-describe">【直供】梦之蓝</p>
+						<p class="goule-goods-info-scroll-price">¥359.00</p>
+					</a>
+				</div>
+			</div>
+			<div class="goule-goods-introduction">
+				<p>商品介绍</p>
+				<img src="img/testImg/blackBackground.png" />
+				<img src="img/testImg/page1.png" />
+				<img src="img/testImg/page3.png" />
+			</div>
+		</div>
+		<div class="goule-goods-short-video">
+			<p>---视频简介---</p>
+			<video src="img/testVideo/videoTest.mp4" class="goule-goods-video" controls webkit-playsinline autoBuffer></video>
+		</div>
+		<div class="goule-goods-operate-footer-holder"></div>
+		<div class="goule-goods-operate-footer">
+			<a href="shoppingCart.html">
+				<i class="iconfont1">&#xe618;</i>
+				<span class="icon-describe">购物车</span>
+			</a>
+			
+			<button id="buy-now" class="red-bck">立即购买</button>
+			<button class="orange-bck">加入购物车</button>
+		</div>
+		<div class="goule-footer-area-holder"></div>
+		<footer class = "goule-footer-area">
+			<div data-tag = "01">
+				<i class="iconfont">&#xe653;</i>
+				<p class = "goule-footer-p">商城首页</p>
+			</div>
+			<div data-tag = "02">
+				<i class="iconfont">&#xe6a8;</i>
+				<p class = "goule-footer-p">分类查询</p>
+			</div>
+			<div data-tag = "03">
+				<i class="iconfont">&#xe619;</i>
+				<p class = "goule-footer-p">购物信息</p>
+			</div>
+			<div data-tag = "04">
+				<i class="iconfont">&#xe649;</i>
+				<p class = "goule-footer-p">个人中心</p>
+			</div>
+		</footer>
+		<script src="config/config.js"></script>
+		<script src="js/footerScript.js"></script>
+		<script src="js/goodsInformation.js"></script>
+	</body>
+</html>

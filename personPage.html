@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximun-scale=1,user-scalable=no" />
+		<title>购了个人主页</title>
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/personPage.css" rel="stylesheet" />
+		<link href="css/footer.css" rel="stylesheet" />
+		
+		<script src="js/frameWork/jquery-2.1.1.min.js"></script>
+	</head>
+	<script>
+		document.documentElement.style.fontSize = screen.width / 7.5 + 'px';
+	</script>
+	<body>
+		<div class = "goule-person-info">
+			<div class = "goule-person-info-container">
+				<img src="img/testImg/item.jpeg" />
+				<span>name</span>
+			</div>
+		</div>
+		<div class="goule-person-operations">
+			<a href="orderManagement.html" class = "goule-person-operation-item">
+				<i class="iconfont1">&#xe604;</i>
+				<span>待付款</span>
+			</a>
+			<a class = "goule-person-operation-item">
+				<i class="iconfont1">&#xe615;</i>
+				<span>待发货</span>
+			</a>
+			<a class = "goule-person-operation-item">
+				<i class="iconfont1">&#xe60a;</i>
+				<span>已发货</span>
+			</a>
+			<a class = "goule-person-operation-item">
+				<i class="iconfont1">&#xe6a6;</i>
+				<span>已完成</span>
+			</a>
+			<a href="addressManagement.html" class="goule-person-operation-item">
+				<i class="iconfont1">&#xe64e;</i>
+				<span>我的收货地址</span>
+			</a>
+			<a href="shoppingCart.html" class = "goule-person-operation-item">
+				<i class="iconfont1">&#xe618;</i>
+				<span>我的购物车</span>
+			</a>
+			
+		</div>
+		<div class="goule-footer-area-holder"></div>
+		<footer class = "goule-footer-area">
+			<div data-tag = "01">
+				<i class="iconfont">&#xe653;</i>
+				<p class = "goule-footer-p">商城首页</p>
+			</div>
+			<div data-tag = "02">
+				<i class="iconfont">&#xe6a8;</i>
+				<p class = "goule-footer-p">分类查询</p>
+			</div>
+			<div data-tag = "03">
+				<i class="iconfont">&#xe619;</i>
+				<p class = "goule-footer-p">购物信息</p>
+			</div>
+			<div data-tag = "04">
+				<i class="iconfont icon-active">&#xe649;</i>
+				<p class = "goule-footer-p title-active">个人中心</p>
+			</div>
+		</footer>
+		<script src="js/footerScript.js"></script>
+		<script src="js/personPage.js"></script>
+	</body>
+</html>

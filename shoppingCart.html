@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购了购物车</title>
+		
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/footer.css" rel="stylesheet" />
+		<link href="css/shoppingCart.css" rel="stylesheet" />
+		
+		<script src="js/frameWork/jquery-2.1.1.min.js"></script>
+		<script src="js/utils/util.js"></script>
+	</head>
+	<script>
+		document.documentElement.style.fontSize = screen.width / 7.5 + 'px';
+	</script>
+	<body>
+		<div class="goule-shopping-noGoods" style="display: none;">
+			<p class="goule-shopping-hint">购物车快饿瘪了T-T</p>
+			<p class="goule-shopping-hint small">快给我挑点宝贝</p>
+			<a href = "queryClassify.html" class = "goule-shopping-noGoods-btn">去逛逛</a>
+		</div>
+		<div class="goule-shopping-container">
+			<div class = "goule-shopping-controller">
+				<div class = "goule-shopping-smlContainer">
+					<i class="iconfont1">&#xe618;</i>
+					<span>购物车</span>
+				</div>
+				<div class = "goule-shopping-smlContainer right " id = "editBtn"><!-- goule-shopping-edit-select -->
+					<i class="iconfont1" >&#xe685;</i>	
+					<span class = "goule-shopping-edit " >编辑</span>
+				</div>
+				
+			</div>
+			
+			
+		</div>
+		<footer class="goule-shopping-footer">
+			<div class="goule-shopping-select">
+				<i class="goule-shopping-checkbox goule-shopping-checkbox-all"></i><!-- goule-shopping-checkbox-ok -->
+				<span class="goule-shopping-checkbox-title">全选</span>
+			</div>
+			<div class="goule-shopping-deal">
+				<div class="goule-shopping-price">
+					<span>合计:<span>
+					<span id = "price">¥0.00</span>
+				</div>
+				<div class="goule-shopping-operation goule-shopping-operation-disable">
+					<span class="goule-shopping-finish">
+						<span>
+							结算
+						</span>
+						<span class="goule-shopping-goods-count"></span>
+					</span>
+					<span class="goule-shopping-delete" style="display: none;">
+						删除
+					</span>
+				</div>
+			</div>
+		</footer>
+		<footer class = "goule-footer-area">
+			<div data-tag = "01">
+				<i class="iconfont ">&#xe653;</i>
+				<p class = "goule-footer-p ">商城首页</p>
+			</div>
+			<div data-tag = "02">
+				<i class="iconfont ">&#xe6a8;</i>
+				<p class = "goule-footer-p ">分类查询</p>
+			</div>
+			<div data-tag = "03">
+				<i class="iconfont icon-active">&#xe619;</i>
+				<p class = "goule-footer-p title-active">购物信息</p>
+			</div>
+			<div data-tag = "04">
+				<i class="iconfont">&#xe649;</i>
+				<p class = "goule-footer-p">个人中心</p>
+			</div>
+		</footer>
+		<div class="goule-comfirm" style="display: none;">
+			<p id = "comfirm-text">确定删除</p>
+			<button id = "comfirm-cancle">取消</button>
+			<button id = "comfirm-sure">确定</button>
+		</div>
+		<div class="Mark" style="display: none;">
+			
+		</div>
+		<script src="config/config.js"></script>
+		<script src="js/footerScript.js"></script>
+		<script src="js/shoppingCart.js"></script>
+		<script src="js/inputNumberEdit.js"></script>
+		<script src="js/comfirm.js"></script>
+	</body>
+</html>

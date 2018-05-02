@@ -1,0 +1,146 @@
+/*
+ **
+ 
+ 搜索页面CSS代码
+ 
+  
+ **
+*/
+
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('../static/iconfont/iconfont.eot');
+  src: url('../static/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../static/iconfont/iconfont.woff') format('woff'),
+  url('../static/iconfont/iconfont.ttf') format('truetype'),
+  url('../static/iconfont/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+a{
+	text-decoration: none;
+}
+.goule-search-area{
+	font-size:0 ;
+	margin: 0;
+	padding: 0;
+	background: #F9FCFB;
+	height: .9rem;
+	text-align: center;
+	border-bottom: 1px solid lightgray;
+}
+.goule-search-area>input{
+	vertical-align: top;
+	width: 79%;
+	height: .6rem;
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: 0;
+	margin-right: 1%;
+	margin-top: .15rem;
+	line-height: .5rem;
+	text-indent: .2rem;
+	border-radius: .1rem .1rem .1rem .1rem;
+	font-size: .3rem;
+	background: #dfdfdf;
+}
+.goule-search-area>button{
+	vertical-align: top;
+	width: 15%;
+	background: #dfdfdf;
+	height: .6rem;
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: 0;
+	margin-top: .15rem;
+	font-size: .3rem;
+	line-height: .5rem;
+	border-radius: .1rem .1rem .1rem .1rem;
+	color: black;
+}
+.goule-search-container{
+	background: #f8f8f8;
+	overflow: hidden;
+}
+.goule-search-item{
+	display: block;
+	width: 94%;
+	margin: .15rem auto;
+	background: white;
+	box-shadow: 1px 1px 10px lightgray;
+	font-size: 0;
+}
+.goule-search-item >img{
+	width: 2.5rem;
+	height: 2.5rem;
+	vertical-align: top;
+}
+.goule-search-item-info{
+	vertical-align: top;
+	display: inline-block;
+	width: calc(100% - 2.5rem);
+	height: 2.5rem;
+}
+.goule-search-goods-describe{
+	font-size: .3rem;
+	color: black;	
+	margin: 0;
+	margin-top: .05rem ;
+	padding: .1rem;
+	height: 1.5rem;
+	overflow: hidden;
+	
+}
+.goule-search-goods-price{
+	font-size: .4rem;
+	color: red;
+	font-family: arial;
+	margin: 0;
+	padding: .1rem;
+}
+.goule-search-controler{
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	background: #f8f8f8;
+}
+.goule-search-controler-btns{
+	
+	width: 94%;
+	margin: 0 auto;
+}
+.goule-search-controler p{
+	margin: 0;
+	padding: 0;
+	margin-bottom: .2rem;
+	display: inline-block;
+	width: 50%;
+	font-size: .3rem;
+	background: white;
+	text-align: center;
+	height: .7rem;
+	line-height: .7rem;
+	cursor: pointer;
+}
+.next{
+	border: 1px solid lightgray;
+	border-radius: 0 .1rem .1rem 0;
+	box-sizing: border-box;
+}
+.prev{
+	border: 1px solid lightgray;
+	border-radius: .1rem 0 0 .1rem;
+	box-sizing: border-box;
+}
+.btn-disable{
+	color: lightgray;
+	background: #f8f8f8 !important;
+}
