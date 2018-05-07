@@ -9,6 +9,7 @@
 		<link href="css/orderPage.css" rel="stylesheet" />
 		
 		<script src="js/frameWork/jquery-2.1.1.min.js"></script>
+		<script src="js/utils/util.js"></script>
 	</head>
 	<script>
 		document.documentElement.style.fontSize = screen.width / 7.5 + 'px';
@@ -17,52 +18,17 @@
 		<div class = "goule-order-container">
 			<div class="goule-order-post-place">
 				<div class="goule-order-operation-title">
-					<i class="iconfont1">&#xe60f;</i>
+					<i id = "add-new-address" class="iconfont1">&#xe60f;</i>
 					<span>选择收货地址</span>
 				</div>
 				<div class="goule-order-post-place-container">
-					<div class = "goule-order-post-place-item">
-						<i class="goule-post-select"></i>
-						<div class="goule-post-info">
-							<p>倪妮</p>
-							<p>重庆市北碚区天生街2号西南大学</p>
-							<p>150xxxx8951</p>
-						</div>
-					</div>
-					<div class = "goule-order-post-place-item">
-						<i class="goule-post-select"></i>
-						<div class="goule-post-info">
-							<p>倪妮</p>
-							<p>重庆市北碚区天生街2号西南大学</p>
-							<p>150xxxx8951</p>
-						</div>
-					</div>
+					<p class="goule-order-post-place-none">暂时没有收货地址哟,快添加！</p>
+					
 				</div>
 			</div>
 			<div class="goule-order-info">
-				<div class="goule-order-base-info">
-					<img src="img/testImg/item.jpeg" />
-					<div class="goule-order-goods-baseInfo">
-						<p class="goule-order-goods-name">【封藏大典】双沟珍宝坊</p>
-						<div class="goule-order-goods-num-component">
-							<i class="iconfont1">&#xe643;</i>
-							<input type="number" value="1" />
-							<i class="iconfont1">&#xe641;</i>
-						</div>
-						<p class="goule-order-goods-price">¥1600.00</p>
-					</div>
-				</div>
-				<div class="goule-order-base-info">
-					<img src="img/testImg/item.jpeg" />
-					<div class="goule-order-goods-baseInfo">
-						<p class="goule-order-goods-name">【封藏大典】双沟珍宝坊</p>
-						<div class="goule-order-goods-num-component">
-							<i class="iconfont1">&#xe643;</i>
-							<input type="number" value="1" />
-							<i class="iconfont1">&#xe641;</i>
-						</div>
-						<p class="goule-order-goods-price">¥1600.00</p>
-					</div>
+				<div class="goule-order-base-info-container">
+					
 				</div>
 				<div class="goule-order-other-info ">
 					<p>配送方式</p>
@@ -72,9 +38,9 @@
 				<div class="goule-order-other-info ">
 					<p>开具发票</p>
 					<p>
-						<select class="invoice-select" name="select" id="select">
-							<option value="1">否</option>
-							<option value="0">是</option>
+						<select class="invoice-select" name="select" id="cinvoice">
+							<option value="0">否</option>
+							<option value="1">是</option>
 						</select>
 					</p>
 				</div>
@@ -83,17 +49,17 @@
 					<p>
 						<select class="invoice-select" name="payMthod" id="select" >
 							<option value="1">微信支付</option>
-							<option value="0">支付宝</option>
+							<!--<option value="0">支付宝</option>-->
 						</select>
 					</p>
 				</div>
 				<div class="goule-order-comment">
 					<p>订单备注</p>
-					<textarea></textarea>
+					<textarea id = "remarks"></textarea>
 				</div>
 				<div class="goule-order-other-info">
 					<p>订单金额</p>
-					<p>¥1600.00</p>
+					<p id = "total-order-price">¥1600.00</p>
 				</div>
 			</div>
 			
@@ -102,7 +68,7 @@
 			
 		</div>
 		<div class="goule-order-pay-footer">
-			<p>立即支付</p>
+			<p id = "final-method">立即支付</p>
 		</div>
 		
 		
@@ -125,7 +91,30 @@
 				<p class = "goule-footer-p">个人中心</p>
 			</div>
 		</footer>
+		<!--自定义提示框-->
+		<div class="goule-comfirm" style="display: none;">
+			<p id = "comfirm-text">确定删除</p>
+			<button id = "comfirm-cancle">取消</button>
+			<button id = "comfirm-sure">确定</button>
+		</div>
+		<div class="Mark" style="display: none;">
+			
+		</div>
+		<div class="goule-loading" style="display: none;">
+			<p class="goule-img-container">
+				<img src="img/gif/loading.gif" />
+			</p>
+		</div>
+		<div class="Mark-white" style="display: none;">
+			
+		</div>
+		<div class="goule-hint" style="display: none;">
+			<p id = "hint-text">确定删除</p>
+			<button id = "hint-sure">确定</button>
+		</div>
 		<script src="config/config.js"></script>
+		<script src="js/comfirm.js"></script>
+		<script src="js/orderPage.js"></script>
 		<script src="js/footerScript.js"></script>
 	</body>
 </html>

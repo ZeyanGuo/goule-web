@@ -117,19 +117,7 @@ a{
 	width: 94%;
 	margin: 0 auto;
 }
-.goule-search-controler p{
-	margin: 0;
-	padding: 0;
-	margin-bottom: .2rem;
-	display: inline-block;
-	width: 50%;
-	font-size: .3rem;
-	background: white;
-	text-align: center;
-	height: .7rem;
-	line-height: .7rem;
-	cursor: pointer;
-}
+
 .next{
 	border: 1px solid lightgray;
 	border-radius: 0 .1rem .1rem 0;
@@ -143,4 +131,13 @@ a{
 .btn-disable{
 	color: lightgray;
 	background: #f8f8f8 !important;
+}
+.goule-search-controler p{
+	margin: 0;
+	padding: .2rem 0 .3rem 0;
+	display: block;
+	color: gray;
+	text-align: center;
+	font-size: .4rem;
+	background: #F9FCFB;
 }

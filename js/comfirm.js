@@ -23,7 +23,7 @@ var hint = (function(){
 	var hintDiv = $('.goule-hint'),
 		markDiv = $('.Mark');
 	
-	$('#hint-sure').on('tap',hideHint);
+	$('#hint-sure').on('click',hideHint);
 	
 	function showHint(text){
 		$('#hint-text').html(text);
@@ -33,7 +33,10 @@ var hint = (function(){
 	
 	function hideHint(){
 		hintDiv.hide();
-		markDiv.hide();
+		setTimeout(function(){
+			markDiv.hide();	
+		},0);
+		
 	}
 	
 	return {
@@ -45,8 +48,8 @@ var hint = (function(){
 
 function showComfirm(text,cancle,comfirm){
 	$('#comfirm-text').html(text);
-	$('#comfirm-cancle').on('touchend',cancleClick);
-	$('#comfirm-sure').on('touchend',comfirmClick);
+	$('#comfirm-cancle').on('tap',cancleClick);
+	$('#comfirm-sure').on('tap',comfirmClick);
 	$('.goule-comfirm').show();
 	$('.Mark').show();
 	

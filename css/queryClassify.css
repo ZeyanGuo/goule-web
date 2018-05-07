@@ -118,3 +118,7 @@ body{
 .load-more{
 	text-align: center;
 }
+.goule-classify-item-none{
+	font-size: .4rem;
+	text-align: center;
+}

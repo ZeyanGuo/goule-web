@@ -132,9 +132,9 @@ body{
 	margin-top: .2rem;
 }
 .goule-order-goods-price{
+	margin-top: .2rem;
 	color: red;
 	font-size: .4rem;
-	margin-top: 1rem;
 }
 .goule-order-goods-num-component{
 	float: right;
@@ -194,6 +194,7 @@ body{
 	padding: 0 0 0 .3rem;
 	font-size: .3rem;
 	 direction: rtl;
+	 background: white;
 }
 .invoice-select option{
 	text-align: right;
@@ -244,4 +245,26 @@ body{
 .goule-order-pay-footer-holder{
 	width: 100%;
 	height: .8rem;
+}
+.number-input{
+	text-align: center;
+	display: inline-block;
+	font-size: .3rem;
+	vertical-align: middle;
+	border-left: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+	width: .5rem;
+}
+.goule-order-post-place-none{
+	overflow: hidden;
+	margin: 0;
+	padding: .3rem 0 .3rem 0;
+	color: gray;
+	border-top: 1px solid lightgray;
+	font-size: .4rem;
+	text-align: center;
+}
+.goule-post-select-checked{
+	background: url(../img/iconImg/ok.png);
+    background-size: .5rem .5rem;
 }

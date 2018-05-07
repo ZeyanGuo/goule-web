@@ -9,10 +9,12 @@
 		<link href="css/index.css" rel="stylesheet" />
 		<link href="css/framWork/swipeslider.css" rel="stylesheet"  />
 		<link href="css/footer.css" rel="stylesheet" />
-
+	
+		
+		
 		<script src="js/frameWork/jquery-2.1.1.min.js"></script>
 		<script src="js/frameWork/swipeslider.min.js"></script>
-		
+		<script src="js/utils/util.js"></script>
 	</head>
 	<script>
 		document.documentElement.style.fontSize = screen.width / 7.5 + 'px';
@@ -20,38 +22,14 @@
 
 	<body>
 		<div class="goule-search-area" id = "search">
-			<input id = "searchValue" type="text" />
+			<input id = "searchValue" type="text" placeholder="商品搜索" />
 			<button id = "searchBtn">搜索</button>
 		</div>
 		<div class="container">
 			<section>
 				<figure id="full_feature" class="swipslider">
 					<ul class="sw-slides">
-						<li class="sw-slide">
-							<a href="">
-								<img src="img/testImg/page1.png" alt="Summer beach concept">
-							</a>
-						</li>
-						<li class="sw-slide">
-							<a href="">
-								<img src="img/testImg/page2.png" alt="Lang from Yie Ar Kung Fu">
-							</a>
-						</li>
-						<li class="sw-slide">
-							<a href="">
-								<img src="img/testImg/page3.png" alt="Tiny Tina">
-							</a>
-						</li>
-						<li class="sw-slide">
-							<a href="">
-								<img src="img/testImg/page4.png" alt="Tiny Tina from Borderlands 2">
-							</a>
-						</li>
-						<li class="sw-slide">
-							<a href="">
-								<img src="img/testImg/page5.png" alt="Redhead girl">
-							</a>
-						</li>
+						
 					</ul>
 				</figure>
 			</section>
@@ -71,7 +49,7 @@
 				<a href = "recommend.html?goodsType=2" class = "goule-icon-item">
 					<i class="iconfont">&#xe64d;</i>
 					<br />
-					<span>商家折扣</span>
+					<span>其他商品</span>
 				</a>
 			</div>
 			<div class = "goule-goods-classify">
@@ -79,43 +57,8 @@
 					<span>精品推荐</span>
 					<a href = "recommend.html?goodsType=0" >查看更多></a>
 				</div>
-				<div class = "goule-goods-classify-container">
-					<a href="goodsInformation.html" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
+				<div class = "goule-goods-classify-container" id = "hotsContainer">
+					<p class="index-none-data">暂无数据</p>
 				</div>
 			</div>
 			<div class = "goule-goods-classify">
@@ -123,92 +66,26 @@
 					<span>新品上市</span>
 					<a href = "recommend.html?goodsType=1" >查看更多></a>
 				</div>
-				<div class = "goule-goods-classify-container">
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
+				<div class = "goule-goods-classify-container" id = "latestContainer">
+					<p class="index-none-data">暂无数据</p>
+					
 				</div>
 			</div>
 			<div class = "goule-goods-classify">
 				<div class = "goule-goods-classify-title">
-					<span>商家折扣</span>
+					<span>其他商品</span>
 					<a href = "recommend.html?goodsType=2" >查看更多></a>
 				</div>
-				<div class = "goule-goods-classify-container">
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
+				<div class = "goule-goods-classify-container" id = "othersContainer">
+					<p class="index-none-data">暂无数据</p>
 				</div>
 			</div>
 		</div>
 		<div class="goule-more-info">
 			<a href = "#search" >返回顶部</a>
+		</div>
+		<div id = "code" style="font-size: .3rem;">
+			
 		</div>
 		<div class="goule-footer-area-holder"></div>
 		<footer class = "goule-footer-area">
@@ -229,8 +106,30 @@
 				<p class = "goule-footer-p">个人中心</p>
 			</div>
 		</footer>
+		<!--自定义提示框-->
+		<div class="goule-comfirm" style="display: none;">
+			<p id = "comfirm-text">确定删除</p>
+			<button id = "comfirm-cancle">取消</button>
+			<button id = "comfirm-sure">确定</button>
+		</div>
+		<div class="Mark" style="display: none;">
+			
+		</div>
+		<div class="goule-loading" style="display: none;">
+			<p class="goule-img-container">
+				<img src="img/gif/loading.gif" />
+			</p>
+		</div>
+		<div class="Mark-white" style="display: none;">
+			
+		</div>
+		<div class="goule-hint" style="display: none;">
+			<p id = "hint-text">确定删除</p>
+			<button id = "hint-sure">确定</button>
+		</div>
 		<script src="config/config.js"></script>
 		<script src="js/footerScript.js"></script>
+		<script src="js/comfirm.js"></script>
 		<script src="js/index.js"></script>
 	</body>
 

@@ -12,3 +12,13 @@ function attributeCount(obj) {
     }
     return count;
 }
+function num2tring($num) {
+    if ($num >= 10000) {
+        $num = Math.round($num / 10000 * 100) / 100 + '万';
+    }else if($num >= 1000) {
+        $num = Math.round($num / 1000 * 100) / 100 + '千';
+    } else {
+        $num = $num;
+    }
+    return $num;
+}

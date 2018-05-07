@@ -1,0 +1,10 @@
+.goule-address-submit-container{
+	text-align: center;
+}
+.goule-address-submit{
+	-webkit-appearance: none;
+	margin-top: .3rem;
+	padding: .2rem 2rem;
+	font-size: .3rem;
+	border-radius: .1rem;
+}

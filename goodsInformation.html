@@ -12,6 +12,7 @@
 		<!--<script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script>-->
 		<script src="js/frameWork/jquery-2.1.1.min.js"></script>
 		<script src="js/frameWork/swipeslider.min.js"></script>
+		<script src="js/utils/util.js"></script>
 	</head>
 	<script>
 		document.documentElement.style.fontSize = screen.width / 7.5 + 'px';
@@ -21,86 +22,30 @@
 			<section>
 				<figure id="full_feature" class="swipslider">
 					<ul class="sw-slides">
-						<li class="sw-slide">
-							<a>
-								<img src="img/testImg/item.jpeg" alt="Summer beach concept">
-							</a>
-						</li>
-						<li class="sw-slide">
-							<a>
-								<img src="img/testImg/page2.png" alt="Lang from Yie Ar Kung Fu">
-							</a>
-						</li>
-						<li class="sw-slide">
-							<a>
-								<img src="img/testImg/page3.png" alt="Tiny Tina">
-							</a>
-						</li>
-						<li class="sw-slide">
-							<a>
-								<img src="img/testImg/page4.png" alt="Tiny Tina from Borderlands 2">
-							</a>
-						</li>
-						<li class="sw-slide">
-							<a>
-								<img src="img/testImg/page5.png" alt="Redhead girl">
-							</a>
-						</li>
+						
 					</ul>
 				</figure>
 			</section>
 		</div>
 		<div class="goule-goods-brief-info">
-			<div class="goule-goods-base-info">
-				<p>双沟珍宝坊 纪念酒 53度</p>
-				<p>
-					<span class="goule-goods-price">¥800.00</span>
-					<span class="goule-goods-store">库存:50</span>
-				</p>
-			</div>
-			<div class="goule-goods-info-item">
-				<p>销量</p>
-				<p>2.1万</p>
-			</div>
-			<div class="goule-goods-info-item">
-				<p>运费</p>
-				<p>包邮</p>
+			<div class= "goule-goods-base-info-container">
+				
+				
 			</div>
 			<div class="goule-goods-info-relate">
 				<p>相关商品</p>
 				<div class="goule-goods-vertical-scroll">
-					<a href="" class="goule-goods-info-scroll">
-						<img src = "img/testImg/item.jpeg" />
-						<p class="goule-goods-info-scroll-describe">【直供】梦之蓝【直供】梦之蓝【直供】梦之蓝【直供】梦之蓝</p>
-						<p class="goule-goods-info-scroll-price">¥359.00</p>
-					</a>
-					<a href="" class="goule-goods-info-scroll">
-						<img src = "img/testImg/item.jpeg" />
-						<p class="goule-goods-info-scroll-describe">【直供】梦之蓝</p>
-						<p class="goule-goods-info-scroll-price">¥359.00</p>
-					</a>
-					<a href="" class="goule-goods-info-scroll">
-						<img src = "img/testImg/item.jpeg" />
-						<p class="goule-goods-info-scroll-describe">【直供】梦之蓝</p>
-						<p class="goule-goods-info-scroll-price">¥359.00</p>
-					</a>
-					<a href="" class="goule-goods-info-scroll">
-						<img src = "img/testImg/item.jpeg" />
-						<p class="goule-goods-info-scroll-describe">【直供】梦之蓝</p>
-						<p class="goule-goods-info-scroll-price">¥359.00</p>
-					</a>
+					
 				</div>
 			</div>
 			<div class="goule-goods-introduction">
 				<p>商品介绍</p>
-				<img src="img/testImg/blackBackground.png" />
-				<img src="img/testImg/page1.png" />
-				<img src="img/testImg/page3.png" />
+				
 			</div>
 		</div>
-		<div class="goule-goods-short-video">
+		<div class="goule-goods-short-video" style="display: none;">
 			<p>---视频简介---</p>
-			<video src="img/testVideo/videoTest.mp4" class="goule-goods-video" controls webkit-playsinline autoBuffer></video>
+			<video src="" class="goule-goods-video" controls webkit-playsinline autoBuffer></video>
 		</div>
 		<div class="goule-goods-operate-footer-holder"></div>
 		<div class="goule-goods-operate-footer">
@@ -110,7 +55,7 @@
 			</a>
 			
 			<button id="buy-now" class="red-bck">立即购买</button>
-			<button class="orange-bck">加入购物车</button>
+			<button id="add-shopping-car" class="orange-bck">加入购物车</button>
 		</div>
 		<div class="goule-footer-area-holder"></div>
 		<footer class = "goule-footer-area">
@@ -131,8 +76,30 @@
 				<p class = "goule-footer-p">个人中心</p>
 			</div>
 		</footer>
+		<!--自定义提示框-->
+		<div class="goule-comfirm" style="display: none;">
+			<p id = "comfirm-text">确定删除</p>
+			<button id = "comfirm-cancle">取消</button>
+			<button id = "comfirm-sure">确定</button>
+		</div>
+		<div class="Mark" style="display: none;">
+			
+		</div>
+		<div class="goule-loading" style="display: none;">
+			<p class="goule-img-container">
+				<img src="img/gif/loading.gif" />
+			</p>
+		</div>
+		<div class="Mark-white" style="display: none;">
+			
+		</div>
+		<div class="goule-hint" style="display: none;">
+			<p id = "hint-text">确定删除</p>
+			<button id = "hint-sure">确定</button>
+		</div>
 		<script src="config/config.js"></script>
 		<script src="js/footerScript.js"></script>
+		<script src="js/comfirm.js"></script>
 		<script src="js/goodsInformation.js"></script>
 	</body>
 </html>

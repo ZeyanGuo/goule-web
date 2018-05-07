@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximun-scale=1,user-scalable=no" />
 		<title>购了购物车</title>
 		
 		<link href="css/common.css" rel="stylesheet" />
@@ -76,6 +77,7 @@
 				<p class = "goule-footer-p">个人中心</p>
 			</div>
 		</footer>
+		<!--自定义提示框-->
 		<div class="goule-comfirm" style="display: none;">
 			<p id = "comfirm-text">确定删除</p>
 			<button id = "comfirm-cancle">取消</button>
@@ -84,10 +86,23 @@
 		<div class="Mark" style="display: none;">
 			
 		</div>
+		<div class="goule-loading" style="display: none;">
+			<p class="goule-img-container">
+				<img src="img/gif/loading.gif" />
+			</p>
+		</div>
+		<div class="Mark-white" style="display: none;">
+			
+		</div>
+		<div class="goule-hint" style="display: none;">
+			<p id = "hint-text">确定删除</p>
+			<button id = "hint-sure">确定</button>
+		</div>
 		<script src="config/config.js"></script>
 		<script src="js/footerScript.js"></script>
+		<script src="js/comfirm.js"></script>
 		<script src="js/shoppingCart.js"></script>
 		<script src="js/inputNumberEdit.js"></script>
-		<script src="js/comfirm.js"></script>
+		
 	</body>
 </html>

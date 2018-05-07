@@ -2,6 +2,7 @@ body{
 	padding: 0;
 	margin: 0;
 	height: 100%;
+	background: #F9FCFB;
 }
 html{
 	height: 100%;
@@ -16,6 +17,7 @@ html{
 	top: calc(50% - 1.25rem);
 	background: white;
 	font-size: 0;
+	overflow: hidden;
 }
 .goule-comfirm >p {
 	height: 1.5rem;
@@ -60,7 +62,7 @@ html{
 	height: 2.5rem;
 	border-radius: .3rem;
 	background: rgba(0,0,0,.7);
-	position: absolute;
+	position: fixed;
 	z-index: 20;
 	top: calc(50% - 1.25rem);
 	left: calc(50% - 1.25rem);
@@ -90,6 +92,7 @@ html{
 	top: calc(50% - 1.25rem);
 	background: white;
 	font-size: 0;
+	overflow: hidden;
 }
 .goule-hint >p {
 	height: 1.5rem;

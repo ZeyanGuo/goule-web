@@ -17,55 +17,17 @@
 	</script>
 	<body>
 		<div class="goule-search-area" id = "search">
-			<input id = "searchValue" type="text" />
+			<input id = "searchValue" type="text" placeholder="商品搜索" />
 			<button id = "searchBtn">搜索</button>
 		</div>
 		<div class="goule-recommend-container">
 			<p id = "goodsType" class = "goule-recommend-title"></p>
 			<div class = "goule-goods-classify-container">
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-					<a href="" class = "goule-goods-info">
-						<img class = "goule-goods-img" src="img/testImg/item.jpeg" />
-						<p class = "goule-goods-name">
-							好吃的坚果系列吧啦吧啦吧吧啦吧啦吧啦吧啦吧啦
-						</p>
-						<p class = "goule-goods-others">
-							<span>¥198.00</span>
-						</p>
-					</a>
-				</div>
+					
+			</div>
 		</div>
 		<div class = "goule-search-controler">
-			<div class = "goule-search-controler-btns">
-				<p class = "prev btn-disable">上一页</p>
-				<p class = "next">下一页</p>
-			</div>
+			<p class="goule-more-data-operation" data-more = "true">点击获取更多</p>
 		</div>
 		<div class="goule-footer-area-holder"></div>
 		<footer class = "goule-footer-area">
@@ -86,8 +48,30 @@
 				<p class = "goule-footer-p">个人中心</p>
 			</div>
 		</footer>
+		<!--自定义提示框-->
+		<div class="goule-comfirm" style="display: none;">
+			<p id = "comfirm-text">确定删除</p>
+			<button id = "comfirm-cancle">取消</button>
+			<button id = "comfirm-sure">确定</button>
+		</div>
+		<div class="Mark" style="display: none;">
+			
+		</div>
+		<div class="goule-loading" style="display: none;">
+			<p class="goule-img-container">
+				<img src="img/gif/loading.gif" />
+			</p>
+		</div>
+		<div class="Mark-white" style="display: none;">
+			
+		</div>
+		<div class="goule-hint" style="display: none;">
+			<p id = "hint-text">确定删除</p>
+			<button id = "hint-sure">确定</button>
+		</div>
 		<script src="config/config.js"></script>
 		<script src="js/footerScript.js"></script>
+		<script src="js/comfirm.js"></script>
 		<script src="js/recommend.js"></script>
 	</body>
 </html>

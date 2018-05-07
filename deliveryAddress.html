@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>购了商城，新增地址</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/framWork/ydui.css"/>
+    <link rel="stylesheet" href="css/framWork/demo.css"/>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/deliveryAddress.css" />
+    <script src="js/frameWork/ydui.flexible.js"></script>
+    <script src="js/utils/util.js"></script>
+</head>
+<body>
+<section class="g-flexview" style="padding-top: 0;">
+
+    <section class="g-scrollview">
+        <div class="m-cell">
+	        	<div class="cell-item">
+                <div class="cell-left">收获姓名：</div>
+                <div class="cell-right">
+                    <input type="text" class="cell-input" id = "name" placeholder="请输入收货人姓名">
+                </div>
+            </div>
+            <div class="cell-item">
+                <div class="cell-left">收获电话：</div>
+                <div class="cell-right">
+                    <input type="number" class="cell-input" id = "phone" placeholder="请输入收货人电话">
+                </div>
+            </div>
+            <div class="cell-item">
+                <div class="cell-left">所在地区：</div>
+                <div class="cell-right cell-arrow">
+                    <input type="text" class="cell-input" readonly id="J_Address" placeholder="请选择收货地址">
+                </div>
+            </div>
+             <div class="cell-item">
+                <div class="cell-left">详细地址：</div>
+                <div class="cell-right">
+                    <input type="text" class="cell-input" id = "address" placeholder="请输入收货人详细地址">
+                </div>
+            </div>
+        </div>
+        <div class = "goule-address-submit-container">
+        		<button class="goule-address-submit">提交</button>
+        </div>
+    </section>
+	
+</section>
+<!--自定义提示框-->
+		<div class="goule-comfirm" style="display: none;">
+			<p id = "comfirm-text">确定删除</p>
+			<button id = "comfirm-cancle">取消</button>
+			<button id = "comfirm-sure">确定</button>
+		</div>
+		<div class="Mark" style="display: none;">
+			
+		</div>
+		<div class="goule-loading" style="display: none;">
+			<p class="goule-img-container">
+				<img src="img/gif/loading.gif" />
+			</p>
+		</div>
+		<div class="Mark-white" style="display: none;">
+			
+		</div>
+		<div class="goule-hint" style="display: none;">
+			<p id = "hint-text">确定删除</p>
+			<button id = "hint-sure">确定</button>
+		</div>
+<script src="js/frameWork/jquery-2.1.1.min.js"></script>
+<script src="js/frameWork/ydui.citys.js"></script>
+<script src="js/frameWork/ydui.js"></script>
+<script src="config/config.js"></script>
+<script src="js/comfirm.js"></script>
+<script src="js/deliveryAddress.js"></script>
+<script>
+    /**
+     * 默认调用
+     */
+    !function () {
+        var $target = $('#J_Address');
+
+        $target.citySelect();
+
+        $target.on('click', function (event) {
+            event.stopPropagation();
+            $target.citySelect('open');
+        });
+
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+            putToJAddress(ret.provance + ' ' + ret.city + ' ' + ret.area)
+        });
+    }();
+    /**
+     * 设置默认值
+     */
+    !function () {
+        var $target = $('#J_Address2');
+
+        $target.citySelect({
+            provance: '新疆',
+            city: '乌鲁木齐市',
+            area: '天山区'
+        });
+
+        $target.on('click', function (event) {
+            event.stopPropagation();
+            $target.citySelect('open');
+        });
+
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+        });
+    }();
+</script>
+</body>
+</html>

@@ -20,6 +20,21 @@ var baseInfo = {
 	},
 	goodsBackInfo = {}
 
+function deleteLocalStorage(id){
+	var Goods = JSON.parse(localStorage.getItem('Goods')),
+		newStorage = [];
+	
+	Goods.map(function(obj){
+		if(obj.id != id){
+			newStorage.push(obj);
+		}
+	});
+	
+	localStorage.setItem('Goods',JSON.stringify(newStorage));
+	
+	
+	
+}
 
 function goodsDelete(e){
 	e.stopPropagation();
@@ -28,8 +43,11 @@ function goodsDelete(e){
 		
 	}
 	function comfirm(){
+		load.show();
 		delete goodsBackInfo[tag];
 		$('[data-tag='+tag+']').remove();
+		deleteLocalStorage(tag);
+		load.hide();
 		if(attributeCount(goodsBackInfo) === 0){
 			pageInit({
 				goods:[]
@@ -49,13 +67,16 @@ function deleteAll(e){
 		
 	}
 	function comfirm(){
+		load.show();
 		for(var key in goodsBackInfo){
 			if(goodsBackInfo[key].select.edit){
 				var tag = key;
 				delete goodsBackInfo[key];
+				deleteLocalStorage(tag);
 				$('[data-tag='+tag+']').remove();
 			}
 		}
+		load.hide();
 		if(attributeCount(goodsBackInfo) === 0){
 			pageInit({
 				goods:[]
@@ -71,27 +92,12 @@ function deleteAll(e){
 
 function getJSONValue(){
 	
+	var store = JSON.parse(localStorage.getItem('Goods'));
+	if(!store){
+		store = [];
+	}
 	return {
-		goods:[
-			{
-				id:"1",
-				Img:'img/testImg/item.jpeg',
-				goodsInfo:{
-					title:'【重庆】熊出没儿童专款蛋糕 中国国际儿童电影节指定蛋糕品牌',
-					singlePrice:'337.00'
-				},
-				count:1
-			},
-			{
-				id:"2",
-				Img:'img/testImg/item.jpeg',
-				goodsInfo:{
-					title:'【重庆】熊出没儿童专款蛋糕 中国国际儿童电影节指定蛋糕品牌',
-					singlePrice:'337.00'
-				},
-				count:3
-			}
-		]
+		goods:store
 	}
 
 }
@@ -222,8 +228,25 @@ function editBtnClick(){
 		goodsInformations.show();
 		editCompelated();
 		checkSelected();
+		localStoreEdit();
 	}
 	editChangeInit();
+}
+function localStoreEdit(){
+	console.log(goodsBackInfo);
+	var newStore = [];
+	for(var key in goodsBackInfo){
+		newStore.push({
+			id:key,
+			count:goodsBackInfo[key].count,
+			Img:goodsBackInfo[key].Img,
+			goodsInfo:{
+				singlePrice:goodsBackInfo[key].singlePrice,
+				title:goodsBackInfo[key].name
+			}
+		});
+	}
+	localStorage.setItem('Goods',JSON.stringify(newStore));
 }
 
 function editCompelated(){
@@ -265,7 +288,7 @@ function produceGood(data){
 					<div class = "goule-shopping-main-container">
 						<p class = "goule-shopping-item-title">${titleValue}</p>
 						<p class = "goule-shopping-item-price">¥${price}</p>
-						<p class = "goule-shopping-item-price small-text-price">小计 ¥${totalPrice}</p>
+						<p class = "goule-shopping-item-price small-text-price">小计 ${totalPrice}</p>
 						<p class = "goule-shopping-item-num">x${count}</p>
 					</div>
 				</div>
@@ -311,7 +334,9 @@ function pageInit(data){
 					goods:false,
 					edit:false
 				},
-				count:obj.goodsInfo.count,
+				Img:obj.Img,
+				name:obj.goodsInfo.title,
+				count:obj.count,
 				singlePrice:obj.goodsInfo.singlePrice,
 				totalPrice:new Number(Number(obj.goodsInfo.singlePrice)*Number(obj.count)).toFixed(2),
 			}
@@ -329,7 +354,34 @@ function pageInit(data){
 	
 }
 
+function initBuyNow(){
+	$('.goule-shopping-finish').on('tap',function(){
+		load.show();
+		var count = 0,newOrder = [];
+		for(var key in goodsBackInfo){
+			if(goodsBackInfo[key].select.goods == true){
+				count++;
+				newOrder.push({
+					id:key,
+					count:goodsBackInfo[key].count,
+					Img:goodsBackInfo[key].Img,
+					goodsInfo:{
+						singlePrice:goodsBackInfo[key].singlePrice,
+						title:goodsBackInfo[key].name
+					}
+				});
+				
+			}
+		}
+		if(count>0){
+			localStorage.setItem('newOrder',JSON.stringify(newOrder));
+			load.hide();
+			window.location.href = "orderPage.html?orderType=0"
+		}
+	})
+}
 
 $(function(){
 	pageInit();
+	initBuyNow();
 })
