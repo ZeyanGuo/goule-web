@@ -29,6 +29,7 @@ function renderPage(data){
 	data.goods.map(function(obj){
 		goodsContainer.append(addGoods(obj))
 	});
+	initImgClick();
 	renderOther(data)
 }
 
@@ -110,7 +111,7 @@ function renderOther(obj){
 	
 	if(!!obj.order.posttype){
 		$('#postType').html(checkArray[obj.order.posttype]);
-		$('#postpostID').html(obj.order.postid);
+		$('#postID').html(obj.order.postid);
 	}
 	if(obj.order.cinvoice == 0){
 		cinvoice = '否';
@@ -181,10 +182,19 @@ function renderOther(obj){
 	
 }
 
-
+function initImgClick(){
+	$('.goule-order-base-info').on('tap',function(e){
+		
+		var target = e.target;
+		if(target.nodeName == 'IMG'){
+			window.location.href = 'goodsInformation.html?id='+$(this).attr('data-id');
+		}
+	})
+}
 
 function initPage(){
 	getAjaxData();
+	
 }
 
 $(function(){

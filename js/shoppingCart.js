@@ -102,9 +102,15 @@ function getJSONValue(){
 
 }
 
-function goodsItemClick(){
+function goodsItemClick(e){
 	var id = $(this).attr('data-tag'),
-		operateTarget = baseInfo.edit?'edit':'goods';
+		operateTarget = baseInfo.edit?'edit':'goods',
+		target = e.target;
+	
+	if(target.nodeName == 'IMG'){
+		window.location.href = 'goodsInformation.html?id='+$(this).attr('data-tag');
+		return;
+	}
 	
 	if(!goodsBackInfo[id].select[operateTarget]){
 		goodsBackInfo[id].select[operateTarget] = true;

@@ -2,8 +2,81 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximun-scale=1,user-scalable=no" />
+		<title>购了物流详情</title>
+		<link href="css/common.css" rel="stylesheet" />
+		<link href="css/checkLogistics.css"  rel="stylesheet"/>
+		<link href="css/footer.css" rel="stylesheet" />
+		<script src="js/frameWork/jquery-2.1.1.min.js"></script>
+		<script src="js/utils/util.js"></script>
 	</head>
+	<script>
+		document.documentElement.style.fontSize = screen.width / 7.5 + 'px';
+	</script>
 	<body>
+		<div class="goule-logistics-none" style="display: none;">
+			<p>暂时没有物流信息</p>
+		</div>
+		<div class="goule-logistics-title">
+			<div class="goule-logistics-item" style="background: whitesmoke;">
+				<p style="display: block; text-align: center; color: black;">物流信息</p>
+			</div>
+			<div class="goule-logistics-item">
+				<p>物流商家</p>
+				<p id = "postType">韵达</p>
+			</div>
+			<div class="goule-logistics-item">
+				<p>订单编号</p>
+				<p id = "postId">韵达</p>
+			</div>
+		</div>
+		<div class="goule-logistics" style="border-top: 1px solid lightgray;">
+			
+			
+		</div>
+		<div class="goule-footer-area-holder"></div>
+		<footer class = "goule-footer-area">
+			<div data-tag = "01">
+				<i class="iconfont">&#xe653;</i>
+				<p class = "goule-footer-p">商城首页</p>
+			</div>
+			<div data-tag = "02">
+				<i class="iconfont">&#xe6a8;</i>
+				<p class = "goule-footer-p">分类查询</p>
+			</div>
+			<div data-tag = "03">
+				<i class="iconfont">&#xe619;</i>
+				<p class = "goule-footer-p">购物信息</p>
+			</div>
+			<div data-tag = "04">
+				<i class="iconfont">&#xe649;</i>
+				<p class = "goule-footer-p">个人中心</p>
+			</div>
+		</footer>
+		<!--自定义提示框-->
+		<div class="goule-comfirm" style="display: none;">
+			<p id = "comfirm-text">确定删除</p>
+			<button id = "comfirm-cancle">取消</button>
+			<button id = "comfirm-sure">确定</button>
+		</div>
+		<div class="Mark" style="display: none;">
+			
+		</div>
+		<div class="goule-loading" style="display: none;">
+			<p class="goule-img-container">
+				<img src="img/gif/loading.gif" />
+			</p>
+		</div>
+		<div class="Mark-white" style="display: none;">
+			
+		</div>
+		<div class="goule-hint" style="display: none;">
+			<p id = "hint-text">确定删除</p>
+			<button id = "hint-sure">确定</button>
+		</div>
+		<script src="config/config.js"></script>
+		<script src="js/footerScript.js"></script>
+		<script src="js/comfirm.js"></script>
+		<script src="js/checkLogistics.js"></script>
 	</body>
 </html>

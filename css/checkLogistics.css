@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('../static/iconfont/iconfont.eot');
+  src: url('../static/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../static/iconfont/iconfont.woff') format('woff'),
+  url('../static/iconfont/iconfont.ttf') format('truetype'),
+  url('../static/iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+a{
+	text-decoration: none;
+}
+
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.goule-logistics{
+	font-size: 0;
+	background: white;
+}
+.goule-logistics-none p{
+	text-align: center;
+	font-size: .4rem;
+	color: gray;
+}
+.goule-logistics-step div{
+	display: inline-block;
+}
+.goule-logistics-time{
+	vertical-align: top;
+	width: 2.5rem;	
+}
+.goule-logistics-time p{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.hour-minute{
+	font-size: .5rem;
+}
+.month-day{
+	font-size: .3rem;
+	color: gray;
+}
+.goule-logistics-discrible{
+	width: calc(100% - 2.5rem);
+	vertical-align: top;
+}
+.goule-logistics-discrible p{
+	margin: 0;
+	padding: 0;
+	font-size: .3rem;
+}
+.goule-logistics .flex{
+	width: 100%;
+	height: 2rem;
+	display: flex;
+	
+	justify-content:center;
+	flex-direction:column;
+}
+.goule-logistics-link{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: .8rem;
+}
+.link{
+	
+	width: 1.3rem;
+	height: .8rem;
+	border-right: 1px solid lightgray;
+}
+.goule-logistics-title{
+	font-size: 0;
+	background: white;
+	margin-bottom: .3rem;
+}
+.goule-logistics-title p {
+	margin: 0;
+	padding: 0 .3rem 0 .3rem;
+	font-size: .35rem;
+	color: gray;
+	display: inline-block;
+	line-height: .8rem;
+}
+.goule-logistics-item{
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid lightgray;
+	height: .8rem;
+}
+.goule-logistics-item >p:last-of-type{
+	
+}
