@@ -97,6 +97,8 @@ a{
 	border-bottom: 1px solid lightgray;
 	font-size: 0;
 	background: white;
+	display: block;
+	color: black;
 }
 .goule-order-title{
 	border-bottom: 1px solid lightgray;
@@ -167,4 +169,11 @@ a{
 	float: right;
 	margin-right: .2rem;
 }
-
+.add-more p{
+	font-size:.4rem ;
+	color: gray;
+	text-align: center;
+}
+.goule-order-info-time{
+	padding-right:.1rem ;
+}

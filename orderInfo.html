@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximun-scale=1,user-scalable=no" />
-		<title>购了订单页面</title>
+		<title>购了订单详情</title>
 		<link href="css/common.css" rel="stylesheet" />
 		<link href="css/footer.css" rel="stylesheet" />
 		<link href="css/orderPage.css" rel="stylesheet" />
@@ -16,7 +16,7 @@
 	</script>
 	<body>
 		<div class = "goule-order-container">
-			<div class="goule-order-post-place">
+			<!--<div class="goule-order-post-place">
 				<div class="goule-order-operation-title">
 					<i id = "add-new-address" class="iconfont1">&#xe60f;</i>
 					<span>选择收货地址</span>
@@ -25,41 +25,53 @@
 					<p class="goule-order-post-place-none">暂时没有收货地址哟,快添加！</p>
 					
 				</div>
-			</div>
-			<div class="goule-order-info">
+			</div>-->
+			<div class="goule-order-info" style="margin: 0;">
+				<div class="goule-order-other-info border-bottom" style="border-top: none;">
+					<p>订单状态</p>
+					<p id = "orderStatus"></p>
+				</div>
 				<div class="goule-order-base-info-container">
 					
 				</div>
-				<div class="goule-order-other-info ">
+				<div class="goule-order-other-info">
+					<p>收货人</p>
+					<p id = "recieper"></p>
+				</div>
+				<div class="goule-order-other-info" style="border-top: none;">
+					<p>收货地址</p>
+					<p id = "address"></p>
+				</div>
+				<div class="goule-order-other-info" style="border-top: none;">
+					<p>联系电话</p>
+					<p id = "phone"></p>
+				</div>
+				<div class="goule-order-other-info " >
 					<p>配送方式</p>
 					<p>包邮</p>
 				</div>
-				
-				<div class="goule-order-other-info ">
-					<p>开具发票</p>
-					<p>
-						<select class="invoice-select" name="select" id="select">
-							<option value="1">否</option>
-							<option value="0">是</option>
-						</select>
-					</p>
+				<div class="goule-order-other-info post-info"  >
+					<p>配送方式</p>
+					<p id = "postType"></p>
+				</div>
+				<div class="goule-order-other-info post-info" >
+					<p>快递单号</p>
+					<p id = "postID"></p>
 				</div>
 				<div class="goule-order-other-info border-bottom">
-					<p>支付方式</p>
-					<p>
-						<select class="invoice-select" name="payMthod" id="select" >
-							<option value="1">微信支付</option>
-							<option value="0">支付宝</option>
-						</select>
+					<p>开具发票</p>
+					<p id = "cinvoice">
+						否
 					</p>
 				</div>
+				
 				<div class="goule-order-comment">
 					<p>订单备注</p>
-					<textarea></textarea>
+					<textarea id = "remark" disabled="true"></textarea>
 				</div>
 				<div class="goule-order-other-info">
 					<p>订单金额</p>
-					<p id = "total-order-price">¥1600.00</p>
+					<p id = "total-order-price" style="color: red;"></p>
 				</div>
 			</div>
 			
@@ -68,7 +80,8 @@
 			
 		</div>
 		<div class="goule-order-pay-footer">
-			<p id = "final-method">立即支付</p>
+			<p style="display: none;" id = "checkLogistics">查看物流</p>
+			<p style="background: #f4a42f;" id = "aboutPay"></p>
 		</div>
 		
 		
@@ -114,7 +127,7 @@
 		</div>
 		<script src="config/config.js"></script>
 		<script src="js/comfirm.js"></script>
-		<script src="js/orderPage.js"></script>
+		<script src="js/orderInfo.js"></script>
 		<script src="js/footerScript.js"></script>
 	</body>
 </html>

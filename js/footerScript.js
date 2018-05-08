@@ -14,14 +14,17 @@ function footerNav(){
 		page04:"personPage.html"
 	}
 	
-	$('.goule-footer-area').on('touchend',function(e){
+	$('.goule-footer-area').on('tap',function(e){
+		
 		var target = e.target,
 			index;
 		if(target.nodeName == "I" || target.nodeName == "P"){
 			target = target.parentElement;
 		}
 		index = $(target).attr('data-tag');
-		window.location.href = URL["page"+index];
+		if(!!index){
+			window.location.href = URL["page"+index];
+		}
 	});
 }
 
