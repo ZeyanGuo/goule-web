@@ -13,11 +13,7 @@ function pageInit(){
 		success:function(data){
 			load.hide();
 			if(data.code == 1){
-				if(data!=''){
-					renderData(data.data);
-				}else{
-					$('.goule-logistics-none').show();
-				}
+				renderData(data.data);
 			}
 			else{
 				hint.show(data.msg);
@@ -57,7 +53,10 @@ function renderData(data){
 	
 	$('#postId').html(data.LogisticCode);
 	$('#postType').html(checkArray[data.ShipperCode])
-	
+	if(traces.length == 0){
+		$('.goule-logistics-none').show();
+		return;
+	}
 	for(var i = traces.length - 1; i >= 0;i--){
 		addressContainer.append(addItem(traces[i]));
 		if(i!=0){

@@ -14,9 +14,7 @@
 		document.documentElement.style.fontSize = screen.width / 7.5 + 'px';
 	</script>
 	<body>
-		<div class="goule-logistics-none" style="display: none;">
-			<p>暂时没有物流信息</p>
-		</div>
+		
 		<div class="goule-logistics-title">
 			<div class="goule-logistics-item" style="background: whitesmoke;">
 				<p style="display: block; text-align: center; color: black;">物流信息</p>
@@ -30,8 +28,10 @@
 				<p id = "postId"></p>
 			</div>
 		</div>
-		<div class="goule-logistics" style="border-top: 1px solid lightgray;">
-			
+		<div class="goule-logistics" style="border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; ">
+			<div class="goule-logistics-none" style="display: none;">
+				<p>暂时没有物流信息，如果超过10天未查询到物流信息，请联系客服 15xxxx8951</p>
+			</div>
 			
 		</div>
 		<div class="goule-footer-area-holder"></div>
@@ -46,7 +46,7 @@
 			</div>
 			<div data-tag = "03">
 				<i class="iconfont">&#xe619;</i>
-				<p class = "goule-footer-p">购物信息</p>
+				<p class = "goule-footer-p" style="text-align: center; width: 1.2rem;">购物车</p>
 			</div>
 			<div data-tag = "04">
 				<i class="iconfont">&#xe649;</i>

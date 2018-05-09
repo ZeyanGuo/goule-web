@@ -77,15 +77,13 @@ function addOrderItem(obj){
 			status = '已完成';
 		} break;
 	}
-	obj.goods.map(function(obj){
-		totalPrice += obj.price;
-		totalCount += obj.produce.goodnum;
-	})
+
+	totalCount = obj.goods.length;
 	goodCount = obj.goods[0].produce.goodnum;
-	goodPrice = (Number(obj.goods[0].price)/Number(goodCount)).toFixed(2);
+	goodPrice = obj.goods[0].produce.price;
 	goodName  = obj.goods[0].name;
 	goodImg   = obj.goods[0].thumbnail; 
-	
+	totalPrice = obj.order.price;
 	
 	totalPrice = totalPrice.toFixed(2);
 	

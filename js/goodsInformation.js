@@ -84,8 +84,9 @@ function addRelateItem(obj){
 
 function produceBaseInfo(data){
 	var baseInfoContainer = $('.goule-goods-base-info-container'),
+		properties = data.gdproperty.split(';');
 		otherInfo = [];
-	
+
 	baseInfoContainer.append(addBaseInfo(data));
 	
 	if(data.post == 1){
@@ -104,6 +105,15 @@ function produceBaseInfo(data){
 		title:'销量',
 		value:num2tring(data.sales)
 	});
+	
+	properties.map(function(obj){
+		var arr = obj.split(':');
+		otherInfo.push({
+			title:arr[0],
+			value:arr[1]
+		})
+	})
+	
 	
 	otherInfo.map(function(obj){
 		baseInfoContainer.append(addInfoItem(obj));

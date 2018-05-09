@@ -35,8 +35,8 @@ function renderPage(data){
 }
 
 function addGoods(obj){
-	var singlePrice = (Number(obj.price)/Number(obj.produce.goodnum)).toFixed(2),
-		totalPrice = Number(obj.price).toFixed(2);
+	var singlePrice = obj.produce.price,
+		totalPrice = (Number(obj.produce.price)*Number(obj.produce.goodnum)).toFixed(2);
 	var html = `<div class="goule-order-base-info" data-id = "${obj.produce.goodid}">
 						<img src="${obj.thumbnail}" />
 						<div class="goule-order-goods-baseInfo">
@@ -94,7 +94,7 @@ function renderOther(obj){
 		case 2:{
 			status = '已发货';
 			$('#checkLogistics').show();
-			operation = '确认收获';
+			operation = '确认收货';
 			$('#aboutPay').on('tap',sureRecieved);
 			$('#checkLogistics').on('tap',checkLogistics);
 		} break;
@@ -123,9 +123,8 @@ function renderOther(obj){
 	$('#cinvoice').html(cinvoice);
 	$('#remark').val(obj.order.remarks);
 	
-	obj.goods.map(function(data){
-		totalPrice += data.price;
-	})
+	
+	totalPrice = obj.order.price;
 	$('#total-order-price').html('¥'+totalPrice);
 	
 	

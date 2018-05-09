@@ -5,6 +5,23 @@ function getJSONValue(){
 	return data;
 }
 
+function deleteShoppingCar(ids){
+	var shoppingInfo = JSON.parse(localStorage.getItem('Goods')),
+		newShoppingGoods = [];
+	
+	
+	
+	ids.map(function(obj){
+		for(var i = 0;i < shoppingInfo.length; i++){
+			if(shoppingInfo[i].id == obj){
+				shoppingInfo.splice(i,1);
+				break;
+			}
+		}
+	});
+	localStorage.setItem('Goods',JSON.stringify(shoppingInfo));
+}
+
 function checkOrder(){
 	load.show()
 	var 	userInfo = JSON.parse(localStorage.getItem('User')),
@@ -48,7 +65,8 @@ function checkOrder(){
 		success:function(data){
 			load.hide();
 			if(data.code == 1){
-				var data = data.data
+				var data = data.data;
+				deleteShoppingCar(goodids);
 				onBridgeReady({
 					appId:data.appId,
 					nonceStr	:data.nonceStr,
@@ -56,7 +74,8 @@ function checkOrder(){
 					paySign:data.paySign,
 					signType:data.signType,
 					timeStamp:data.timeStamp
-				})
+				});
+				
 			}
 		},
 		error:function(err){
