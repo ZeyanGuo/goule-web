@@ -1,5 +1,5 @@
 .goule-footer-area-holder{
-	height: 1.2rem;	
+	height: 1.05rem;	
 }
 .goule-footer-area{
 	position: fixed;
@@ -8,7 +8,7 @@
 	bottom: 0;
 	background: #f9fcfb;
 	font-size: 0;
-	height: 1.2rem;
+	height: 1.05rem;
 	z-index: 10;
 }
 .goule-footer-area i{
@@ -23,7 +23,7 @@
 .goule-footer-area>div{
 	margin: 0;
 	padding: 0;
-	height: 1rem;
+	height: .9rem;
 	display: inline-block;
 	margin: 0;
 	padding: 0;
@@ -37,7 +37,7 @@
 	font-size: .3rem;
 	color: gray;
 	position: absolute;
-	top: .7rem;
+	top: .6rem;
 	left: calc(50% - .6rem);
 	text-shadow: none;
 }

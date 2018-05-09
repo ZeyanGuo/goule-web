@@ -41,7 +41,8 @@ function checkOrder(){
 			cinvoice:cinvoice,
 			goodids:goodids.join('a'),
 			goodnums:goodnums.join('a'),
-			addressid:addressId
+			addressid:addressId,
+			openid:userInfo.openid
 		},
 		async:true,
 		success:function(data){
@@ -158,7 +159,8 @@ function initAddress(){
 		type:'GET',
 		url:config.SERVER+'/getUserAddress',
 		data:{
-			userid:userInfo.id
+			userid:userInfo.id,
+			openid:userInfo.openid
 		},
 		success:function(data){
 			initAddressContainer(data.data);
@@ -211,8 +213,56 @@ setTimeout(function(){
 	initAddress();
 }
 
+function initKeyBorad(){
+	var spanTarget,
+		id;
+	$('.number-input').on('click',function(e){
+		spanTarget = e.target;
+		id = $(spanTarget).parents('.goule-order-goods-num-component').attr('data-tag');
+		$('.layer-content').animate({
+			bottom: 0
+		}, 200)
+		e.stopPropagation();
+	})
+	$('.layer-content').on('click',function(e){
+		e.stopPropagation();
+	})
+	$('body').on('click',function(){
+		if(spanTarget.innerHTML == ''){
+			spanTarget.innerHTML = 1;
+		}
+		$('.layer-content').animate({
+			bottom: '-200px'
+		}, 200);
+		
+		dataStatic = dataStatic.map(function(obj){
+			if(obj.id == id){
+				obj.count = spanTarget.innerHTML;
+			}
+			return obj;
+		})
+		
+		localStorage.setItem('newOrder',JSON.stringify(dataStatic));
+		changeInput();
+		calculatePrice();
+	});
+	$('.form_edit .num').click(function(){
+		var value = spanTarget.innerHTML+this.innerHTML;
+		if(value<=999){
+			spanTarget.innerHTML = value;
+		}
+	})
+	$('#remove').click(function(){
+		var oDivHtml = spanTarget.innerHTML;
+		spanTarget.innerHTML = oDivHtml.substring(0,oDivHtml.length-1);
+		
+
+	})
+}
+
 $(function(){
 	initPage();
+	initKeyBorad();
 })
 
 

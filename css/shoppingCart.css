@@ -211,8 +211,8 @@ button{
 	z-index: 10;
 	position: fixed;
 	width: 100%;
-	height: 1rem;
-	bottom: 1rem;
+	height: .9rem;
+	bottom: 1.05rem;
 	left: 0;
 	background: white;
 	font-size: 0;
@@ -223,18 +223,18 @@ button{
 	padding-right:.3rem ;
 }
 .goule-shopping-checkbox-all{
-	top: .1rem;
+	top: .15rem;
 	left: .2rem;
 }
 .goule-shopping-checkbox-title{
 	font-size: .3rem;
-	line-height: .8rem;
-	margin-left: .8rem;
+	line-height: .9rem;
+	margin-left: .9rem;
 }
 .goule-shopping-deal{
 	display: inline-block;
 	float: right;
-	line-height: .8rem;
+	line-height: .9rem;
 }
 .goule-shopping-price{
 	font-size: .3rem;
@@ -246,7 +246,7 @@ button{
 	display: inline-block;
 	font-size: .3rem;
 	background: red;
-	width: 2rem;
+	width: 2.5rem;
 	text-align: center;
 	color: white;
 }
@@ -261,4 +261,7 @@ button{
 .small-text-price{
 	font-size: .2rem;
 	margin-left: .2rem;
+}
+.goodsNum{
+	height: .4rem;
 }

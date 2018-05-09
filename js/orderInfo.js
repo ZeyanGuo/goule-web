@@ -1,4 +1,4 @@
-
+var userInfo = JSON.parse(localStorage.getItem('User'));
 function getAjaxData(){
 	load.show();
 	var id = QueryString('id');
@@ -6,7 +6,8 @@ function getAjaxData(){
 		type:'GET',
 		url:config.SERVER + '/getOrderDetail',
 		data:{
-			orderid:id
+			orderid:id,
+			openid:userInfo.openid
 		},
 		async:true,
 		success:function(data){
@@ -156,7 +157,8 @@ function renderOther(obj){
 			async:true,
 			data:{
 				orderid:obj.order.id,
-				userid:userInfo.id
+				userid:userInfo.id,
+				openid:userInfo.openid
 			},
 			success:function(data){
 				load.hide();

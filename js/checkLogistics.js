@@ -1,3 +1,4 @@
+var userInfo = JSON.parse(localStorage.getItem('User'));
 function pageInit(){
 	load.show();
 	var orderId = QueryString('id');
@@ -6,7 +7,8 @@ function pageInit(){
 		url: config.SERVER+"/getLogisticInfo",
 		async:true,
 		data:{
-			orderid:	orderId
+			orderid:	orderId,
+			openid:userInfo.openid
 		},
 		success:function(data){
 			load.hide();

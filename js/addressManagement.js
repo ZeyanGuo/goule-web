@@ -17,7 +17,8 @@ function initPage(){
 		type:"get",
 		url:config.SERVER + "/getUserAddress",
 		data:{
-			userid:userInfo.id
+			userid:userInfo.id,
+			openid:userInfo.openid
 		},
 		async:true,
 		success:function(data){
@@ -109,7 +110,8 @@ function operationBtnTap(e){
 			url:config.SERVER+"/setDefaultAddress",
 			data:{
 				userid:userInfo.id,
-				addressid:id
+				addressid:id,
+				openid:userInfo.openid
 			},
 			async:true,
 			success:function(data){
@@ -134,7 +136,8 @@ function operationBtnTap(e){
 			type:"GET",
 			url:config.SERVER+"/deleteAddress",
 			data:{
-				addressid:id
+				addressid:id,
+				openid:userInfo.openid
 			},
 			async:true,
 			success:function(data){

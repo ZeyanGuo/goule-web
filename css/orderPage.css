@@ -223,10 +223,10 @@ body{
 
 .goule-order-pay-footer{
 	position: fixed;
-	height: .8rem;
+	height: .9rem;
 	background: white;
 	width: 100%;
-	bottom: 1.2rem;
+	bottom: 1.05rem;
 	border-top: 1px solid lightgray;
 }
 .goule-order-pay-footer p{
@@ -237,10 +237,10 @@ body{
 	width: 3rem;
 	color: white;
 	text-align: center;
-	height: .8rem;
+	height: .9rem;
 	margin: 0;
 	padding: 0;
-	line-height: .8rem;
+	line-height: .9rem;
 }
 
 .goule-order-pay-footer-holder{

@@ -13,7 +13,8 @@ function getAJAXData(){
 			userid:	userInfo.id,
 			page:page,
 			limit:limit,
-			status:orderStatus
+			status:orderStatus,
+			openid:userInfo.openid
 		},
 		success:function(data){
 			load.hide();

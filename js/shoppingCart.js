@@ -106,7 +106,6 @@ function goodsItemClick(e){
 	var id = $(this).attr('data-tag'),
 		operateTarget = baseInfo.edit?'edit':'goods',
 		target = e.target;
-	
 	if(target.nodeName == 'IMG'){
 		window.location.href = 'goodsInformation.html?id='+$(this).attr('data-tag');
 		return;
@@ -205,7 +204,8 @@ function allSelect(){
 	checkSelected();
 }
 
-function editBtnClick(){
+function editBtnClick(e){
+	e.stopPropagation();
 	var editSpan = $('#editBtn span'),
 		editBtn = $('#editBtn'),
 		finishText = $('.goule-shopping-finish'),
@@ -260,6 +260,10 @@ function editCompelated(){
 		var obj = $(this),
 			tag = obj.attr('data-tag'),
 			newCount = obj.find('.goodsNum').html();
+		if(newCount == ''){
+			newCount = 1;
+			obj.find('.goodsNum').html(1);
+		}
 		obj.find('.goule-shopping-item-num').html('x'+newCount);
 		
 		goodsBackInfo[tag].count = newCount;
@@ -387,7 +391,42 @@ function initBuyNow(){
 	})
 }
 
+function initKeyBorad(){
+	var spanTarget;
+	$('.goodsNum').on('click',function(e){
+		spanTarget = e.target;
+		$('.layer-content').animate({
+			bottom: 0
+		}, 200)
+		e.stopPropagation();
+	})
+	$('.layer-content').on('click',function(e){
+		e.stopPropagation();
+	})
+	$('body').on('click',function(){
+		if(spanTarget.innerHTML == ''){
+			spanTarget.innerHTML = 1;
+		}
+		$('.layer-content').animate({
+			bottom: '-200px'
+		}, 200)
+	});
+	$('.form_edit .num').click(function(){
+		var value = spanTarget.innerHTML+this.innerHTML;
+		if(value<=999){
+			spanTarget.innerHTML = value;
+		}
+	})
+	$('#remove').click(function(){
+		var oDivHtml = spanTarget.innerHTML;
+		spanTarget.innerHTML = oDivHtml.substring(0,oDivHtml.length-1);
+		
+
+	})
+}
+
 $(function(){
 	pageInit();
 	initBuyNow();
+	initKeyBorad()
 })

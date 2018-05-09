@@ -1,5 +1,5 @@
 var JAddress = "";
-
+var userInfo = JSON.parse(localStorage.getItem('User'));
 function putToJAddress(val){
 	JAddress = val;
 }
@@ -35,7 +35,8 @@ function initPage(){
 	   			userid:userInfo.id,
 	   			detail:JAddress + ' ' + address,
 	   			receptor:name,
-	   			phone:phone
+	   			phone:phone,
+	   			openid:userInfo.openid
 	   		},
 	   		async:true,
 	   		success:function(data){
