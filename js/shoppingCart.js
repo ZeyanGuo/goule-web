@@ -400,10 +400,10 @@ function initKeyBorad(){
 		}, 200)
 		e.stopPropagation();
 	})
-	$('.layer-content').on('click',function(e){
+	$('.layer-content').on('tap',function(e){
 		e.stopPropagation();
 	})
-	$('body').on('click',function(){
+	$('body').on('tap',function(){
 		if(spanTarget.innerHTML == ''){
 			spanTarget.innerHTML = 1;
 		}
@@ -411,13 +411,13 @@ function initKeyBorad(){
 			bottom: '-200px'
 		}, 200)
 	});
-	$('.form_edit .num').click(function(){
+	$('.form_edit .num').on('tap',function(){
 		var value = spanTarget.innerHTML+this.innerHTML;
 		if(value<=999){
 			spanTarget.innerHTML = value;
 		}
 	})
-	$('#remove').click(function(){
+	$('#remove').on('tap',function(){
 		var oDivHtml = spanTarget.innerHTML;
 		spanTarget.innerHTML = oDivHtml.substring(0,oDivHtml.length-1);
 		
