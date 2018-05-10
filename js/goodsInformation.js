@@ -106,13 +106,15 @@ function produceBaseInfo(data){
 		value:num2tring(data.sales)
 	});
 	
-	properties.map(function(obj){
-		var arr = obj.split(':');
-		otherInfo.push({
-			title:arr[0],
-			value:arr[1]
+	if(!(properties.length == 1 && properties[0] == '')){
+		properties.map(function(obj){
+			var arr = obj.split(':');
+			otherInfo.push({
+				title:arr[0],
+				value:arr[1]
+			})
 		})
-	})
+	}
 	
 	
 	otherInfo.map(function(obj){
