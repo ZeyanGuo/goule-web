@@ -122,6 +122,12 @@ function getUserInfo(){
 			}
 		})
 	}
+	else{
+		var userInfo = localStorage.getItem('User');
+		if(userInfo == null){
+			window.location.href = 'error.html';
+		}
+	}
 	
 	
 }

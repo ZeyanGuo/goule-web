@@ -247,23 +247,25 @@ function initKeyBorad(){
 		e.stopPropagation();
 	})
 	$('body').on('tap',function(){
-		if(spanTarget.innerHTML == ''){
-			spanTarget.innerHTML = 1;
-		}
-		$('.layer-content').animate({
-			bottom: '-200px'
-		}, 200);
-		
-		dataStatic = dataStatic.map(function(obj){
-			if(obj.id == id){
-				obj.count = spanTarget.innerHTML;
+		if(!!spanTarget){
+			if(spanTarget.innerHTML == ''){
+				spanTarget.innerHTML = 1;
 			}
-			return obj;
-		})
-		
-		localStorage.setItem('newOrder',JSON.stringify(dataStatic));
-		changeInput();
-		calculatePrice();
+			$('.layer-content').animate({
+				bottom: '-200px'
+			}, 200);
+			
+			dataStatic = dataStatic.map(function(obj){
+				if(obj.id == id){
+					obj.count = spanTarget.innerHTML;
+				}
+				return obj;
+			})
+			
+			localStorage.setItem('newOrder',JSON.stringify(dataStatic));
+			changeInput();
+			calculatePrice();
+		}
 	});
 	$('.form_edit .num').on('tap',function(){
 		var value = spanTarget.innerHTML+this.innerHTML;

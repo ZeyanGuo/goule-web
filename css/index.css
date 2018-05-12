@@ -74,13 +74,14 @@ a{
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	padding-top: 60% !important;
 }
 .sw-next-prev{
 	display: none;
 }
 .sw-slides img{
 	width: 100%;
-	height: 5rem;
+	height: 100%;
 }
 .goule-icon{
 	background: white;

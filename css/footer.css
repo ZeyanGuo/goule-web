@@ -1,5 +1,5 @@
 .goule-footer-area-holder{
-	height: 1.05rem;	
+	height: .85rem;	
 }
 .goule-footer-area{
 	position: fixed;
@@ -8,15 +8,15 @@
 	bottom: 0;
 	background: #f9fcfb;
 	font-size: 0;
-	height: 1.05rem;
+	height: .85rem;
 	z-index: 10;
 }
 .goule-footer-area i{
 	font-size: .5rem;
 	color: gray;
-	line-height: 1rem;
+	line-height: .9rem;
 	position: absolute;
-	top: calc(50% - .6rem);
+	top: calc(50% - .58rem);
 	left: calc(50% - .25rem);
 	text-shadow: none;
 }
@@ -32,14 +32,20 @@
 	position: relative;
 }
 .goule-footer-p{
+	-webkit-transform-origin-x: 0;
+    -webkit-transform: scale(0.80);	
 	margin: 0;
 	padding: 0;
-	font-size: .3rem;
+	font-size: .15rem;
 	color: gray;
 	position: absolute;
-	top: .6rem;
-	left: calc(50% - .6rem);
+	top: .53rem;
+	left: .45rem;
 	text-shadow: none;
+	width: 1.2rem !important;
+}
+div[data-tag="0"] > p{
+	left: .47rem;
 }
 .goule-footer-area .icon-active{
 	color: red;

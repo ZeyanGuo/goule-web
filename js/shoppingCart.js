@@ -404,12 +404,14 @@ function initKeyBorad(){
 		e.stopPropagation();
 	})
 	$('body').on('tap',function(){
-		if(spanTarget.innerHTML == ''){
-			spanTarget.innerHTML = 1;
+		if(!!spanTarget){
+			if(spanTarget.innerHTML == ''){
+				spanTarget.innerHTML = 1;
+			}
+			$('.layer-content').animate({
+				bottom: '-200px'
+			}, 200)
 		}
-		$('.layer-content').animate({
-			bottom: '-200px'
-		}, 200)
 	});
 	$('.form_edit .num').on('tap',function(){
 		var value = spanTarget.innerHTML+this.innerHTML;
