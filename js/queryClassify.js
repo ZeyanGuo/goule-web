@@ -1,5 +1,4 @@
 function pageInit(){
-	
 	//初始化方法
 	bindClassifyClick();
 	produceQueryClassiFy();
@@ -43,10 +42,8 @@ function addItemToContainer(index,page,data,limit){
 				moreOperation.html('没有更多数据');
 				moreOperation.attr('data-more','false');
 			}
-			
 			data.map(function(obj,index){
 				itemContainer.append(addItem(obj));
-				
 			});
 		}
 	});
@@ -82,7 +79,6 @@ function addType(data,index){
 	var active = index==0?'goule-classify-active':'',
 		html = `<div class = "goule-classify-item ${active}" data-tag = "${index}" data-id = "${data.id}">
 					<p>${data.gtname}</p>
-				
 				</div>`;
 	return html;
 }
@@ -96,16 +92,17 @@ function addTypeContainer(data,index){
 				</div>`
 	return html;
 }
+
 function addItem(data){
-	var price = '¥'+data.price.toFixed(2);
-	var html = `<a href="goodsInformation.html?id=${data.id}" class = "goule-classify-container-item">
-				<img src="${data.firstImage}" />
-				<div class = "goule-classify-container-item-text">
-					<p class = "goule-classify-container-item-name">${data.name}</p>
-					<p class = "goule-classify-container-item-price">${price}</p>
-				</div>
-			</a>`
-	return html
+    var smallRecommend = `<a href="goodsInformation.html?id=${data.id}" class = "goule-goods-info">
+						<div class = "goule-goods-img-container">
+						<img class = "goule-goods-img" src="${data.firstImage}" />
+						</div>
+						<p class = "goule-goods-name">
+							${data.name}
+						</p>
+						<p class = "goule-goods-others">;`
+	return smallRecommend;
 }
 
 
@@ -127,14 +124,11 @@ function changeSelected(e){
 		$('.goule-classify-container').map(function(){
 			if($(this).attr("data-tag") == loadPage){
 				var page = $(this).attr('data-page');
-				
 				$(this).siblings('.goule-classify-container').hide();
 				$(this).show();
-				
 				if(page == 0){
 					getQueryItem($(this).attr('data-tag'),$(this).attr('data-id'),1);
 				}
-				
 			}
 		})
 	}

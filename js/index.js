@@ -31,12 +31,14 @@ function produceIndexPage(data){
 	var carousel = data.data.carousel,
 		carouselContainer = $('.sw-slides'),
 		hots = data.data.hots,
-		hotsContainer = $('#hotsContainer'),
-		latest = data.data.latest,
-		latestContainer = $('#latestContainer'),
-		others = data.data.others,
-		othersContainer = $('#othersContainer');
-	
+		hotsContainer = $('#hotsCn'),
+		discounts = data.data.discounts,
+		discountsContainer =  $('#discountCn'),
+        funfood = data.data.funfood,
+        funfoodContainer =  $('#funsnackCn'),
+        freshfood = data.data.freshfood,
+        freshfoodContainer =  $('#freshfoodCn');
+
 	carousel.map(function(obj){
 		carouselContainer.append(addCarousel(obj));
 	});
@@ -48,18 +50,24 @@ function produceIndexPage(data){
 			hotsContainer.append(addSmallRecommend(obj));
 		})
 	}
-	if(latest.length>0){
-		latestContainer.find('.index-none-data').hide();
-		latest.map(function(obj){
-			latestContainer.append(addSmallRecommend(obj));
-		})
-	}
-	if(others.length>0){
-		othersContainer.find('.index-none-data').hide();
-		others.map(function(obj){
-			othersContainer.append(addSmallRecommend(obj));
-		})
-	}
+    if(discounts.length>0){
+        discountsContainer.find('.index-none-data').hide();
+        discounts.map(function(obj){
+            discountsContainer.append(addSmallRecommend(obj, true));
+        })
+    }
+    if(funfood.length>0){
+        funfoodContainer.find('.index-none-data').hide();
+        funfood.map(function(obj){
+            funfoodContainer.append(addSmallRecommend(obj));
+        })
+    }
+    if(freshfood.length>0){
+        freshfoodContainer.find('.index-none-data').hide();
+        freshfood.map(function(obj){
+            freshfoodContainer.append(addSmallRecommend(obj));
+        })
+    }
 }
 
 function addCarousel(data){//添加轮播图
@@ -71,19 +79,27 @@ function addCarousel(data){//添加轮播图
 	return ImgCarousel;
 }
 
-function addSmallRecommend(data){
-	var price = '¥'+data.price.toFixed(2),
-	smallRecommend = `<a href="goodsInformation.html?id=${data.id}" class = "goule-goods-info">
+function addSmallRecommend(data, show){
+    var price = data.price.toFixed(2);
+	var disprice = data.price;
+	if (data.discount == 1) {
+		disprice = (disprice * data.discountrate / 100).toFixed(2);
+	}
+	var smallRecommend = `<a href="goodsInformation.html?id=${data.id}" class = "goule-goods-info">
 						<div class = "goule-goods-img-container">
 						<img class = "goule-goods-img" src="${data.firstImage}" />
 						</div>
 						<p class = "goule-goods-name">
 							${data.name}
 						</p>
-						<p class = "goule-goods-others">
-							<span>${price}</span>
-						</p>
-					</a>`;
+						<p class = "goule-goods-others">`;
+	if (disprice < price && show) {
+		smallRecommend += `<span style="text-decoration:line-through;color: black;">${price}</span>
+							<span>¥${disprice}</span></p></a>`;
+	} else {
+        smallRecommend += `<span>¥${disprice}</span></p></a>`;
+	}
+
 	return smallRecommend;
 }
 
@@ -97,7 +113,7 @@ function getUserInfo(){
 	
 	load.show();
 	
-	if(!!code){//code存在
+/*	if(!!code){//code存在
 		$.ajax({
 			type:'GET',
 			url:config.SERVER+'/getUserInfo',
@@ -121,15 +137,12 @@ function getUserInfo(){
 				hint.show('用户信息获取失败');
 			}
 		})
-	}
-	else{
+	} else {
 		var userInfo = localStorage.getItem('User');
 		if(userInfo == null){
 			window.location.href = 'error.html';
 		}
-	}
-	
-	
+	}*/
 }
 
 $(function() {

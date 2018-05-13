@@ -8,8 +8,9 @@
 */
 var goodsType = [
 	"--- 精品推荐 ---",
-	"--- 新品上市 ---",
-	"--- 其他商品 ---"
+	"--- 今日折扣 ---",
+	"--- 趣味零食 ---",
+    "--- 新鲜果蔬 ---"
 ],page = 1,limit = 10,value;
 function pageInit(){
 	value = QueryString("goodsType");
@@ -44,7 +45,7 @@ function getInfoAndRender(){
 		case '1':{
 			$.ajax({
 				type:"GET",
-				url:config.SERVER+"/getLatest",
+				url:config.SERVER+"/getDiscount",
 				data:{
 					page:page,
 					limit:limit
@@ -63,7 +64,7 @@ function getInfoAndRender(){
 		case '2':{
 			$.ajax({
 				type:"GET",
-				url:config.SERVER+"/getGoodByType",
+				url:config.SERVER+"/getFunFood",
 				data:{
 					typeid:32,
 					page:page,
@@ -80,6 +81,25 @@ function getInfoAndRender(){
 				}
 			});
 		} break;
+        case '3':{
+            $.ajax({
+                type:"GET",
+                url:config.SERVER+"/getFreshGood",
+                data:{
+                    page:page,
+                    limit:limit
+                },
+                async:true,
+                success:function(data){
+                    load.hide();
+                    producePageInfo(data.data);
+                },
+                error:function(){
+                    load.hide();
+                    hint.show('获取信息失败,请稍后重试');
+                }
+            });
+        } break;
 		default:{}
 	}
 }
@@ -103,10 +123,18 @@ function addItem(obj){
 						<p class = "goule-goods-name">
 							${obj.name}
 						</p>
-						<p class = "goule-goods-others">
-							<span>¥${obj.price}</span>
-						</p>
-					</a>`
+						<p class = "goule-goods-others">`;
+    var price = obj.price.toFixed(2);
+    var disprice = obj.price;
+    if (obj.discount == 1) {
+        disprice = (disprice * obj.discountrate / 100).toFixed(2);
+    }
+    if (disprice < price && value == 1) {
+        html += `<span style="text-decoration:line-through;color: black;">${price}</span>
+							<span>¥${disprice}</span></p></a>`;
+    } else {
+        html += `<span>¥${disprice}</span></p></a>`;
+    }
 	return html;
 }
 
