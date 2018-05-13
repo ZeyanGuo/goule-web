@@ -113,7 +113,7 @@ function getUserInfo(){
 	
 	load.show();
 	
-/*	if(!!code){//code存在
+	if(!!code){//code存在
 		$.ajax({
 			type:'GET',
 			url:config.SERVER+'/getUserInfo',
@@ -142,7 +142,7 @@ function getUserInfo(){
 		if(userInfo == null){
 			window.location.href = 'error.html';
 		}
-	}*/
+	}
 }
 
 $(function() {
