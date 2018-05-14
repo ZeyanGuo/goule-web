@@ -36,10 +36,11 @@
     -webkit-transform: scale(0.80);	
 	margin: 0;
 	padding: 0;
-	font-size: .15rem;
+	font-size: .27rem;
+	font-weight: bold;
 	color: gray;
 	position: absolute;
-	top: .53rem;
+	top: .55rem;
 	left: .45rem;
 	text-shadow: none;
 	width: 1.2rem !important;

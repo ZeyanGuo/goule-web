@@ -8,9 +8,7 @@ function getJSONValue(){
 function deleteShoppingCar(ids){
 	var shoppingInfo = JSON.parse(localStorage.getItem('Goods')),
 		newShoppingGoods = [];
-	
-	
-	
+
 	ids.map(function(obj){
 		for(var i = 0;i < shoppingInfo.length; i++){
 			if(shoppingInfo[i].id == obj){
@@ -92,9 +90,7 @@ function renderOrder(data){
 		itemContainer.append(addItem(obj));
 		totalPrice += Number(obj.count)*Number(obj.goodsInfo.singlePrice)
 	})
-	
 	$('#total-order-price').html('¥'+totalPrice.toFixed(2));
-	
 }
 
 function addItem(obj){

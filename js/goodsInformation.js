@@ -86,9 +86,7 @@ function produceBaseInfo(data){
 	var baseInfoContainer = $('.goule-goods-base-info-container'),
 		properties = data.gdproperty.split(';');
 		otherInfo = [];
-
 	baseInfoContainer.append(addBaseInfo(data));
-	
 	if(data.post == 1){
 		otherInfo.push({
 			title:'运费',
@@ -115,22 +113,25 @@ function produceBaseInfo(data){
 			})
 		})
 	}
-	
-	
+
 	otherInfo.map(function(obj){
 		baseInfoContainer.append(addInfoItem(obj));
 	})
 	
 }
 function addBaseInfo(data){
-	var price = '¥'+data.price.toFixed(2)
-		html = `<div class="goule-goods-base-info">
-					<p>${data.name}</p>
-					<p>
-						<span class="goule-goods-price">${price}</span>
-						<span class="goule-goods-store">库存:${data.stock}</span>
-					</p>
-				</div>`
+	var tprice = data.price.toFixed(2);
+	var disprice = tprice;
+	if (data.discount == 1) {
+		disprice = (tprice * data.discountrate / 100).toFixed(2);
+	}
+	var html = `<div class="goule-goods-base-info"><p>${data.name}</p><p>`;
+	if (disprice < tprice) {
+		html += '<span style="color:black;text-decoration:line-through;margin-right: .2rem">¥' + tprice + '</span><span class="goule-goods-price">¥' + disprice + '</span>';
+	} else {
+        html += '<span class="goule-goods-price">¥' + tprice + '</span>';
+	}
+	html += `<span class="goule-goods-store">库存:${data.stock}</span></p></div>`
 	return html;
 }
 function addInfoItem(obj){
@@ -207,7 +208,11 @@ function buyGoods(data){
 		count = 1,
 		id = data.id,
 		item = [];
-	
+	//添加折扣处理
+	if(data.discount == 1) {
+	    price = price * data.discountrate / 100;
+    }
+
 	item.push({
 		id:id,
 		Img:img,

@@ -137,11 +137,6 @@ function getUserInfo(){
 				hint.show('用户信息获取失败');
 			}
 		})
-	} else {
-		var userInfo = localStorage.getItem('User');
-		if(userInfo == null){
-			window.location.href = 'error.html';
-		}
 	}
 }
 
