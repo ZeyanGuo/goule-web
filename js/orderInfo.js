@@ -35,7 +35,7 @@ function renderPage(data){
 }
 
 function addGoods(obj){
-	var singlePrice = obj.produce.price,
+	var singlePrice =obj.produce.price,
 		totalPrice = (Number(obj.produce.price)*Number(obj.produce.goodnum)).toFixed(2);
 	var html = `<div class="goule-order-base-info" data-id = "${obj.produce.goodid}">
 						<img src="${obj.thumbnail}" />
@@ -137,14 +137,14 @@ function renderOther(obj){
 				count:data.produce.goodnum,
 				id:data.produce.goodid,
 				goodsInfo:{
-					singlePrice:(Number(data.price)/Number(data.produce.goodnum)).toFixed(2),
+					singlePrice:data.produce.price,
 					title:data.name
 				}
 			})
 		})
 		localStorage.setItem('newOrder',JSON.stringify(goods));
 		load.hide();
-		window.location.href = "orderPage.html";
+		window.location.href = "orderPage.html?orderId="+QueryString('id');
 	}
 	
 	function sureRecieved(){

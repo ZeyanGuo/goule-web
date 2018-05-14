@@ -27,7 +27,8 @@ function checkOrder(){
 		goodids = [],
 		goodnums = [],
 		cinvoice = 0,
-		remarks = "";
+		remarks = "",
+		sendData;
 	if(!addressId){
 		hint.show('请选择收获地址');
 		load.hide();
@@ -44,21 +45,23 @@ function checkOrder(){
 	cinvoice = $('#cinvoice').val();
 	
 	remarks = $('#remarks').val();
-	
-	
+	sendData  = {
+		userid:userInfo.id,
+		remarks:remarks,
+		cinvoice:cinvoice,
+		goodids:goodids.join('a'),
+		goodnums:goodnums.join('a'),
+		addressid:addressId,
+		openid:userInfo.openid
+	}
+	if(!!QueryString('orderId')){
+		sendData.oldid = QueryString('orderId');
+	}
 	
 	$.ajax({
 		type:"get",
 		url:config.SERVER+"/generateOrder",
-		data:{
-			userid:userInfo.id,
-			remarks:remarks,
-			cinvoice:cinvoice,
-			goodids:goodids.join('a'),
-			goodnums:goodnums.join('a'),
-			addressid:addressId,
-			openid:userInfo.openid
-		},
+		data:sendData,
 		async:true,
 		success:function(data){
 			load.hide();
