@@ -29,7 +29,7 @@ function checkOrder(){
 		cinvoice = 0,
 		remarks = "",
 		sendData;
-	alert(addressId);
+	
 	if(!addressId){
 		hint.show('请选择收获地址');
 		load.hide();
@@ -58,7 +58,7 @@ function checkOrder(){
 	if(!!QueryString('orderId')){
 		sendData.oldid = QueryString('orderId');
 	}
-	alert(JSON.stringify(sendData));
+	
 	$.ajax({
 		type:"get",
 		url:config.SERVER+"/generateOrder",
@@ -66,11 +66,11 @@ function checkOrder(){
 		async:true,
 		success:function(data){
 			load.hide();
-			alert(data.code);
+			
 			if(data.code == 1){
 				var data = data.data;
 				deleteShoppingCar(goodids);
-				alert(JSON.stringify(data));
+				
 				pay(data);
 			}
 		},
