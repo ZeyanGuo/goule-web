@@ -57,7 +57,7 @@ function checkOrder(){
 	if(!!QueryString('orderId')){
 		sendData.oldid = QueryString('orderId');
 	}
-	
+	alert(JSON.stringify(sendData));
 	$.ajax({
 		type:"get",
 		url:config.SERVER+"/generateOrder",
@@ -68,6 +68,7 @@ function checkOrder(){
 			if(data.code == 1){
 				var data = data.data;
 				deleteShoppingCar(goodids);
+				alert(JSON.stringify(data.data));
 				onBridgeReady({
 					appId:data.appId,
 					nonceStr	:data.nonceStr,
