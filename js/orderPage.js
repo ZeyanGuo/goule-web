@@ -65,6 +65,7 @@ function checkOrder(){
 		async:true,
 		success:function(data){
 			load.hide();
+			alert(data.code);
 			if(data.code == 1){
 				var data = data.data;
 				deleteShoppingCar(goodids);
