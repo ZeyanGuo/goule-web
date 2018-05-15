@@ -284,6 +284,8 @@ $(function(){
 //-------微信支付接口--------
 
 function pay(data){
+	alert(JSON.stringify(data));
+	alert(typeof WeixinJSBrige == 'undefined');
 	if(typeof WeixinJSBrige == 'undefined'){
 		if(document.addEventListener){
 			document.addEventListener('WeixinJSBridgeReady',function(){
@@ -320,6 +322,7 @@ function pay(data){
 			})
 		}
 		else{
+			
 			onBridgeReady({
 				appId:data.appId,
 				nonceStr	:data.nonceStr,
