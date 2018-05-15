@@ -288,6 +288,7 @@ function pay(data){
 	if (typeof WeixinJSBridge == "undefined"){
 	   if( document.addEventListener ){
 	       document.addEventListener('WeixinJSBridgeReady', function(){
+	       		alert(data);
 				onBridgeReady({
 					appId:data.appId,
 					nonceStr	:data.nonceStr,
