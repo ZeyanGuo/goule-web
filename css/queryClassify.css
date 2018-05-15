@@ -37,7 +37,8 @@ body{
 .goule-classify{
 	margin: 0;
 	padding: 0;
-	width: 25%;
+	width: 20%;
+	text-align: center;
 	background: #f8f8f8;
 	overflow: scroll;
 	border-right: 1px solid lightgray;
@@ -66,11 +67,10 @@ body{
     margin: 0 auto;
     max-height: .8rem;
     text-overflow: ellipsis;
-	
 }
 .goule-classify-container{
 	display: inline-block;
-	width: 75%;
+	width: 80%;
 	vertical-align: top;
 	overflow: scroll;
 	height: calc(100% - .95rem);

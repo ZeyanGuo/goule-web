@@ -29,7 +29,7 @@ function pageInit(){
 function produceGoodsInfoPage(data){
 	produceThumbNail(data.good.thumbnail);
 	produceBaseInfo(data.good);
-	produceRelateGoods(data.relative);
+	//produceRelateGoods(data.relative);
 	produceGoodsIntroduction(data.good);
 	produceVideo(data.good)
 }
@@ -60,7 +60,7 @@ function addIntroduceItem(obj){
 	var html = `<img src="${obj}" />`
 	return html;
 }
-function produceRelateGoods(data){
+/*function produceRelateGoods(data){
 	var relateContainer = $('.goule-goods-vertical-scroll');
 	if(data.length == 0){
 		relateContainer.hide();
@@ -68,7 +68,7 @@ function produceRelateGoods(data){
 	data.map(function(obj){
 		relateContainer.append(addRelateItem(obj))
 	})
-}
+}*/
 
 function addRelateItem(obj){
 	var price = '¥'+obj.price.toFixed(2),
