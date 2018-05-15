@@ -70,16 +70,8 @@ function checkOrder(){
 			if(data.code == 1){
 				var data = data.data;
 				deleteShoppingCar(goodids);
-				alert(JSON.stringify(data.data));
-				onBridgeReady({
-					appId:data.appId,
-					nonceStr	:data.nonceStr,
-					packageinfo:data.packageinfo,
-					paySign:data.paySign,
-					signType:data.signType,
-					timeStamp:data.timeStamp
-				});
-				
+				alert(JSON.stringify(data));
+				pay(data);
 			}
 		},
 		error:function(err){
@@ -290,6 +282,55 @@ $(function(){
 
 
 //-------微信支付接口--------
+
+function pay(data){
+	if(typeof WeixinJSBrige == 'undefined'){
+		if(document.addEventListener){
+			document.addEventListener('WeixinJSBridgeReady',function(){
+				onBridgeReady({
+					appId:data.appId,
+					nonceStr	:data.nonceStr,
+					packageinfo:data.packageinfo,
+					paySign:data.paySign,
+					signType:data.signType,
+					timeStamp:data.timeStamp
+				});
+			},false)
+		}
+		else if(document.attachEvent){
+			document.attachEvent('WeixinJSBridgeReady',function(){
+				onBridgeReady({
+					appId:data.appId,
+					nonceStr	:data.nonceStr,
+					packageinfo:data.packageinfo,
+					paySign:data.paySign,
+					signType:data.signType,
+					timeStamp:data.timeStamp
+				});
+			});
+			document.attachEvent('onWeixinJSBridgeReady',function(){
+				onBridgeReady({
+					appId:data.appId,
+					nonceStr	:data.nonceStr,
+					packageinfo:data.packageinfo,
+					paySign:data.paySign,
+					signType:data.signType,
+					timeStamp:data.timeStamp
+				});
+			})
+		}
+		else{
+			onBridgeReady({
+				appId:data.appId,
+				nonceStr	:data.nonceStr,
+				packageinfo:data.packageinfo,
+				paySign:data.paySign,
+				signType:data.signType,
+				timeStamp:data.timeStamp
+			});
+		}
+	}
+}
 
 function onBridgeReady(data){
    WeixinJSBridge.invoke(
