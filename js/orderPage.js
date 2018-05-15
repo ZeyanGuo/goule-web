@@ -284,11 +284,10 @@ $(function(){
 //-------微信支付接口--------
 
 function pay(data){
-	alert(JSON.stringify(data));
-	alert(typeof WeixinJSBrige == 'undefined');
-	if(typeof WeixinJSBrige == 'undefined'){
-		if(document.addEventListener){
-			document.addEventListener('WeixinJSBridgeReady',function(){
+
+	if (typeof WeixinJSBridge == "undefined"){
+	   if( document.addEventListener ){
+	       document.addEventListener('WeixinJSBridgeReady', function(){
 				onBridgeReady({
 					appId:data.appId,
 					nonceStr	:data.nonceStr,
@@ -297,10 +296,19 @@ function pay(data){
 					signType:data.signType,
 					timeStamp:data.timeStamp
 				});
-			},false)
-		}
-		else if(document.attachEvent){
-			document.attachEvent('WeixinJSBridgeReady',function(){
+			}, false);
+	   }else if (document.attachEvent){
+	       document.attachEvent('WeixinJSBridgeReady', function(){
+				onBridgeReady({
+					appId:data.appId,
+					nonceStr	:data.nonceStr,
+					packageinfo:data.packageinfo,
+					paySign:data.paySign,
+					signType:data.signType,
+					timeStamp:data.timeStamp
+				});
+			}); 
+	       document.attachEvent('onWeixinJSBridgeReady', function(){
 				onBridgeReady({
 					appId:data.appId,
 					nonceStr	:data.nonceStr,
@@ -310,28 +318,9 @@ function pay(data){
 					timeStamp:data.timeStamp
 				});
 			});
-			document.attachEvent('onWeixinJSBridgeReady',function(){
-				onBridgeReady({
-					appId:data.appId,
-					nonceStr	:data.nonceStr,
-					packageinfo:data.packageinfo,
-					paySign:data.paySign,
-					signType:data.signType,
-					timeStamp:data.timeStamp
-				});
-			})
-		}
-		else{
-			
-			onBridgeReady({
-				appId:data.appId,
-				nonceStr	:data.nonceStr,
-				packageinfo:data.packageinfo,
-				paySign:data.paySign,
-				signType:data.signType,
-				timeStamp:data.timeStamp
-			});
-		}
+	   }
+	}else{
+	   onBridgeReady();
 	}
 }
 
