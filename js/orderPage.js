@@ -29,6 +29,7 @@ function checkOrder(){
 		cinvoice = 0,
 		remarks = "",
 		sendData;
+	alert(addressId);
 	if(!addressId){
 		hint.show('请选择收获地址');
 		load.hide();
