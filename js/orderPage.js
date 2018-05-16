@@ -298,7 +298,7 @@ function initPay(){
                 appId: data.appId, // 必填，公众号的唯一标识  
                 timestamp: data.timestamp, // 必填，生成签名的时间戳  
                 nonceStr: data.nonceStr, // 必填，生成签名的随机串  
-                signature: data.signature, // 必填，签名，见附录1  
+                signature: data.signature.toLowerCase(), // 必填，签名，见附录1  
                 jsApiList: [  
                         "chooseWXPay"  
                     ] // 所有要调用的 API 都要加到这个列表中  
