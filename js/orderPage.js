@@ -286,12 +286,12 @@ $(function(){
 //-------微信支付接口--------
 
 function initPay(){
-	alert(location.href);
+	
 	$.ajax({
 		type:'get',
 		url:config.SERVER+'/generatePageConfig',
 		data:{
-			url:location.origin+'/Goule/'
+			url:location.origin+'/'
 		},
 		success:function(data){
 			var data = data.data;
