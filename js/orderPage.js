@@ -6,18 +6,21 @@ function getJSONValue(){
 }
 
 function deleteShoppingCar(ids){
+	
 	var shoppingInfo = JSON.parse(localStorage.getItem('Goods')),
 		newShoppingGoods = [];
-
-	ids.map(function(obj){
-		for(var i = 0;i < shoppingInfo.length; i++){
-			if(shoppingInfo[i].id == obj){
-				shoppingInfo.splice(i,1);
-				break;
+	
+	if(!!shoppingInfo){
+		ids.map(function(obj){
+			for(var i = 0;i < shoppingInfo.length; i++){
+				if(shoppingInfo[i].id == obj){
+					shoppingInfo.splice(i,1);
+					break;
+				}
 			}
-		}
-	});
+		});
 	localStorage.setItem('Goods',JSON.stringify(shoppingInfo));
+	}
 }
 
 function checkOrder(){
@@ -169,6 +172,7 @@ function initAddress(){
 		window.location.href = 'deliveryAddress.html?from=orderPage';
 	});
 	$('.goule-order-post-place-container').on('tap',addressSelect);
+	
 	$.ajax({
 		type:'GET',
 		url:config.SERVER+'/getUserAddress',
@@ -277,9 +281,11 @@ function initKeyBorad(){
 }
 
 $(function(){
+	console.log(localStorage.getItem('Goods'));
 	initPage();
 	initKeyBorad();
 	initPay();
+	
 })
 
 
@@ -312,6 +318,7 @@ function initPay(){
 	})
 }
 function pay(data){   
+	debugger;
   // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
   alert(JSON.stringify(data));
     wx.chooseWXPay({
