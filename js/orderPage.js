@@ -286,7 +286,7 @@ $(function(){
 //-------微信支付接口--------
 
 function initPay(){
-	alert(location.origin+'/Goule/');
+	alert(location.href);
 	$.ajax({
 		type:'get',
 		url:config.SERVER+'/generatePageConfig',
