@@ -290,7 +290,7 @@ function initPay(){
 		type:'get',
 		url:config.SERVER+'/generatePageConfig',
 		data:{
-			url:location.origin+location.pathname
+			url:location.origin+'/Goule/'
 		},
 		success:function(data){
 			var data = data.data;
