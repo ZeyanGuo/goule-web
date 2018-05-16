@@ -85,6 +85,9 @@ function renderOther(obj){
 			status = '待付款';
 			operation = '重新购买';
 			initPay();
+			$('#checkLogistics').html('取消订单');
+			$('#checkLogistics').show();
+			$('#checkLogistics').on('tap',cancelOrder)
 			$('#aboutPay').on('tap',function(){
 				reBuy(obj);
 			});
@@ -137,6 +140,36 @@ function renderOther(obj){
 	}
 	$('#total-order-price').html('¥'+totalPrice.toFixed(2));
 	
+	
+	function cancelOrder(){
+		load.show();
+		$.ajax({
+			type:"get",
+			url:config.SERVER+"/cancelOrder",
+			data:{
+				openid:userInfo.openid,
+				orderid:obj.order.id
+			},
+			async:true,
+			success:function(data){
+				load.hide();
+				if(data.code == 1){
+					hint.show('取消订单成功');
+					setTimeout(function(){
+						location.href = 'orderManagement.html?orderStatus=0'
+					},1000)
+				}
+				else{
+					hint.show(data.msg);
+				}
+			},
+			error:function(){
+				load.hide();
+				hint.show('取消订单失败，请稍后重试');
+			}
+		});
+	}
+
 	
 	function reBuy(data){
 		
