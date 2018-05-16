@@ -107,10 +107,7 @@ function produceBaseInfo(data){
 			value:'¥'+data.postprice.toFixed(2)
 		})
 	}
-	otherInfo.push({
-		title:'销量',
-		value:num2tring(data.sales)
-	});
+	
 	
 	if(!(properties.length == 1 && properties[0] == '')){
 		properties.map(function(obj){
@@ -177,7 +174,7 @@ function addShoppingCar(data){
 	load.show();
 	var name = data.name,
 		price = data.price,
-		img = data.firstImage,
+		img = data.thumbnail.split(';')[0],
 		count = 1,
 		id = data.id,
 		item = JSON.parse(localStorage.getItem('Goods')),

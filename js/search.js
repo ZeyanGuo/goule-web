@@ -57,9 +57,10 @@ function produceSearchPage(data,limit){
 }
 
 function addItem(obj){
+	var imageShow = obj.thumbnail.split(';')[0]
 	var price = '¥'+obj.price.toFixed(2),
 		html = `<a class = "goule-search-item" href="goodsInformation.html?id=${obj.id}">
-				<img src="${obj.firstImage}" />
+				<img src="${imageShow}" />
 				<div class="goule-search-item-info">
 					<p class = "goule-search-goods-describe">${obj.name}</p>
 					<p class = "goule-search-goods-price">${price}</p>

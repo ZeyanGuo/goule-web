@@ -94,9 +94,10 @@ function addTypeContainer(data,index){
 }
 
 function addItem(data){
+	var imageShow = data.thumbnail.split(';')[0];
     var smallRecommend = `<a href="goodsInformation.html?id=${data.id}" class = "goule-goods-info">
 						<div class = "goule-goods-img-container">
-						<img class = "goule-goods-img" src="${data.firstImage}" />
+						<img class = "goule-goods-img" src="${imageShow}" />
 						</div>
 						<p class = "goule-goods-name">
 							${data.name}

@@ -116,9 +116,10 @@ function producePageInfo(data){
 };
 
 function addItem(obj){
+	var showImage = obj.thumbnail.split(';')[0];
 	var html = `<a href="goodsInformation.html?id=${obj.id}" class = "goule-goods-info">
 						<div class = "goule-goods-img-container">
-							<img class = "goule-goods-img" src="${obj.firstImage}" />
+							<img class = "goule-goods-img" src="${showImage}" />
 						</div>
 						<p class = "goule-goods-name">
 							${obj.name}

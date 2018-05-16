@@ -71,9 +71,10 @@ function produceIndexPage(data){
 }
 
 function addCarousel(data){//添加轮播图
+	var imageShow = data.introduce.split(';')[0];
 	var ImgCarousel = `<li class="sw-slide">
 							<a href="goodsInformation.html?id=${data.id}">
-								<img src="${data.firstImage}" alt="${data.name}">
+								<img src="${imageShow}" alt="${data.name}">
 							</a>
 						</li>`
 	return ImgCarousel;
@@ -82,12 +83,13 @@ function addCarousel(data){//添加轮播图
 function addSmallRecommend(data, show){
     var price = data.price.toFixed(2);
 	var disprice = data.price;
+	var imageShow = data.thumbnail.split(';')[0];
 	if (data.discount == 1) {
 		disprice = (disprice * data.discountrate / 100).toFixed(2);
 	}
 	var smallRecommend = `<a href="goodsInformation.html?id=${data.id}" class = "goule-goods-info">
 						<div class = "goule-goods-img-container">
-						<img class = "goule-goods-img" src="${data.firstImage}" />
+						<img class = "goule-goods-img" src="${imageShow}" />
 						</div>
 						<p class = "goule-goods-name">
 							${data.name}
