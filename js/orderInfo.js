@@ -1,4 +1,5 @@
-var userInfo = JSON.parse(localStorage.getItem('User'));
+var userInfo = JSON.parse(localStorage.getItem('User')),
+	timestamp,nonceStr;
 function getAjaxData(){
 	load.show();
 	var id = QueryString('id');
@@ -35,7 +36,7 @@ function renderPage(data){
 }
 
 function addGoods(obj){
-	var singlePrice =obj.produce.price,
+	var singlePrice =obj.produce.price.toFixed(2),
 		totalPrice = (Number(obj.produce.price)*Number(obj.produce.goodnum)).toFixed(2);
 	var html = `<div class="goule-order-base-info" data-id = "${obj.produce.goodid}">
 						<img src="${obj.thumbnail}" />
@@ -83,7 +84,10 @@ function renderOther(obj){
 		case 0:{
 			status = '待付款';
 			operation = '重新购买';
-			$('#aboutPay').on('tap',reBuy);
+			initPay();
+			$('#aboutPay').on('tap',function(){
+				reBuy(obj);
+			});
 			$('.post-info').hide();
 		} break;
 		case 1:{
@@ -125,26 +129,56 @@ function renderOther(obj){
 	
 	
 	totalPrice = obj.order.price;
-	$('#total-order-price').html('¥'+totalPrice);
+	if(totalPrice<60){
+		$('#sendPrice').html('5元');
+	}
+	else{
+		$('#sendPrice').html('包邮');
+	}
+	$('#total-order-price').html('¥'+totalPrice.toFixed(2));
 	
 	
-	function reBuy(){
+	function reBuy(data){
+		
 		load.show();
-		var goods = [];
-		obj.goods.map(function(data){
-			goods.push({
-				Img:data.thumbnail,
-				count:data.produce.goodnum,
-				id:data.produce.goodid,
-				goodsInfo:{
-					singlePrice:data.produce.price,
-					title:data.name
+		var goodids = data.goods.map(function(obj){
+				return obj.produce.goodid;
+			}),
+			goodnums = data.goods.map(function(obj){
+				return obj.produce.goodnum;
+			}),
+			sendData = {
+				userid:userInfo.id,
+				remarks:data.order.remarks,
+				cinvoice:data.order.cinvoice,
+				goodids:goodids.join('a'),
+				goodnums:goodnums.join('a'),
+				addressid:data.order.addressid,
+				openid:userInfo.openid,
+				oldid: data.order.id
+			};
+		sendData.timeStamp = timestamp;
+		sendData.nonceStr = nonceStr;	
+		$.ajax({
+			type:"get",
+			url:config.SERVER+"/generateOrder",
+			data:sendData,
+			async:true,
+			success:function(data){
+				load.hide();
+				
+				if(data.code == 1){
+					var data = data.data;
+					
+					pay(data);
 				}
-			})
-		})
-		localStorage.setItem('newOrder',JSON.stringify(goods));
-		load.hide();
-		window.location.href = "orderPage.html?orderId="+QueryString('id');
+			},
+			error:function(err){
+				load.hide();
+				hint.show('订单生成失败，请稍后重试');
+			}
+		});
+		
 	}
 	
 	function sureRecieved(){
@@ -196,6 +230,67 @@ function initImgClick(){
 function initPage(){
 	getAjaxData();
 	
+}
+
+function pay(data){   
+	
+  // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+  
+    wx.chooseWXPay({
+        appId: data.appId,  
+        timestamp: data.timeStamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符  
+        nonceStr: data.nonceStr, // 支付签名随机串，不长于 32 位  
+        package: data.packageinfo, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）  
+        signType: data.signType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'  
+        paySign: data.paySign, // 支付签名  
+        success: function(res) { 
+        	
+            // 支付成功后的回调函数  
+            if (res.errMsg == "chooseWXPay:ok") {  
+                //支付成功  
+                	hint.show('微信支付成功');
+	           	setTimeout(function(){
+	           		window.location.href = "orderManagement.html?orderStatus=1";
+	           	},1000);
+            } else {  
+            		
+                hint.show(res.errMsg);  
+            }  
+        },  
+        cancel: function(res) {  
+            //支付取消  
+            	hint.show('微信支付失败');
+           	setTimeout(function(){
+           		window.location.href = "orderManagement.html?orderStatus=0";
+           	},1000);
+        }  
+    });   
+}
+function initPay(){
+	
+	$.ajax({
+		type:'get',
+		url:config.SERVER+'/generatePageConfig',
+		data:{
+			url:location.href
+		},
+		success:function(data){
+			var data = data.data;
+			nonceStr = data.nonceStr;
+			timestamp = data.timestamp;
+			 wx.config({  
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。  
+                appId: data.appId, // 必填，公众号的唯一标识  
+                timestamp: data.timestamp, // 必填，生成签名的时间戳  
+                nonceStr: data.nonceStr, // 必填，生成签名的随机串  
+                signature: data.signature.toLowerCase(), // 必填，签名，见附录1  
+                jsApiList: [  
+                        "chooseWXPay"  
+                    ] // 所有要调用的 API 都要加到这个列表中  
+            });  
+            
+		}
+	})
 }
 
 $(function(){

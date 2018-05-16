@@ -74,7 +74,7 @@ a{
 .goule-order-nav{
 	background: white;
 	height: .8rem;
-	border-bottom: 1px solid lightgray;
+	border-bottom: 1px solid #E8E8E8;
 	font-size: 0;
 }
 .goule-order-nav-item{
@@ -93,18 +93,18 @@ a{
 .goule-order-item{
 	margin-top: .3rem;
 	overflow: hidden;
-	border-top: 1px solid lightgray;
-	border-bottom: 1px solid lightgray;
+	border-top: 1px solid #E8E8E8;
+	border-bottom: 1px solid #E8E8E8;
 	font-size: 0;
 	background: white;
 	display: block;
 	color: black;
 }
 .goule-order-title{
-	border-bottom: 1px solid lightgray;
+	border-bottom: 1px solid #E8E8E8;
 	font-size: .3rem;
 	line-height: .8rem;
-	border-bottom: 1px solid lightgray;
+	border-bottom: 1px solid #E8E8E8;
 }
 
 .goule-order-status{
@@ -159,7 +159,7 @@ a{
 .goule-order-other-info{
 	height: .8rem;
 	line-height: .8rem;
-	border-top: 1px solid lightgray;
+	border-top: 1px solid #E8E8E8;
 }
 .goule-order-other-info > p{
 	margin: 0;

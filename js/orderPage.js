@@ -91,7 +91,14 @@ function renderOrder(data){
 	data.map(function(obj){
 		itemContainer.append(addItem(obj));
 		totalPrice += Number(obj.count)*Number(obj.goodsInfo.singlePrice)
-	})
+	});
+	if(totalPrice<60){
+		$('#sendPrice').html('5元(单次购物满60元包邮)');
+		totalPrice += 5;
+	}
+	else{
+		$('#sendPrice').html('包邮');
+	}
 	$('#total-order-price').html('¥'+totalPrice.toFixed(2));
 }
 
@@ -155,6 +162,13 @@ function calculatePrice(){
 		$('[data-tag='+obj.id+']').siblings('.goule-order-goods-totalprice').html(price);
 		totalPrice += Number(obj.count)*Number(obj.goodsInfo.singlePrice);
 	});
+	if(totalPrice<60){
+		$('#sendPrice').html('5元(单次购物满60元包邮)');
+		totalPrice += 5;
+	}
+	else{
+		$('#sendPrice').html('包邮');
+	}
 	$('#total-order-price').html('¥'+totalPrice.toFixed(2));
 }
 
@@ -304,7 +318,7 @@ function initPay(){
 			nonceStr = data.nonceStr;
 			timestamp = data.timestamp;
 			 wx.config({  
-                debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。  
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。  
                 appId: data.appId, // 必填，公众号的唯一标识  
                 timestamp: data.timestamp, // 必填，生成签名的时间戳  
                 nonceStr: data.nonceStr, // 必填，生成签名的随机串  
@@ -318,9 +332,9 @@ function initPay(){
 	})
 }
 function pay(data){   
-	debugger;
+	
   // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
-  alert(JSON.stringify(data));
+  
     wx.chooseWXPay({
         appId: data.appId,  
         timestamp: data.timeStamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符  
@@ -351,20 +365,3 @@ function pay(data){
         }  
     });   
 }
-
-
-//function onBridgeReady(){
-// WeixinJSBridge.invoke(
-//     'getBrandWCPayRequest', {
-//         "appId":data.appId,     //公众号名称，由商户传入     
-//         "timeStamp":data.timeStamp,         //时间戳，自1970年以来的秒数     
-//         "nonceStr":data.nonceStr, //随机串     
-//         "package":data.packageinfo,     
-//         "signType":data.signType,         //微信签名方式：     
-//         "paySign":data.paySign //微信签名 
-//     },
-//     function(res){     
-//         if(res.err_msg == "get_brand_wcpay_request:ok" ) {}     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
-//     }
-// ); 
-//}s

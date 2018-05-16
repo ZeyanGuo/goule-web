@@ -84,13 +84,21 @@ function addRelateItem(obj){
 
 function produceBaseInfo(data){
 	var baseInfoContainer = $('.goule-goods-base-info-container'),
-		properties = data.gdproperty.split(';');
-		otherInfo = [];
+		properties = data.gdproperty.split(';'),
+		otherInfo = [],
+		sendPrice;
+		
+	if(data.price < 60){
+		sendPrice = '5元(单次购物满60元包邮)';
+	}
+	else{
+		sendPrice = '包邮';
+	}
 	baseInfoContainer.append(addBaseInfo(data));
 	if(data.post == 1){
 		otherInfo.push({
 			title:'运费',
-			value:'包邮'
+			value:sendPrice
 		})
 	}
 	else{
