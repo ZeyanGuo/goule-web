@@ -291,7 +291,7 @@ function initPay(){
 		type:'get',
 		url:config.SERVER+'/generatePageConfig',
 		data:{
-			url:location.origin+'/'
+			url:location.href
 		},
 		success:function(data){
 			var data = data.data;
