@@ -6,11 +6,16 @@ function putToJAddress(val){
 }
 
 function initPage(){
-		
+	
 	$('.goule-address-submit').on('tap',function(){
 		var name = $('#name').val(),
 			phone = $('#phone').val(),
 			address = $('#address').val();
+			
+		if(!userInfo){
+			hint.show('用户信息获取失败，无法添加地址');
+			return;
+		}
 		
 		if(name == ""){
 			hint.show('请输入收货人姓名');
