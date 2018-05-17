@@ -1,12 +1,12 @@
 var JAddress = "";
-var userInfo = JSON.parse(localStorage.getItem('User'));
+var userInfo = JSON.parse(localStorage.getItem('User')),
+	fromPage = QueryString('from');;
 function putToJAddress(val){
 	JAddress = val;
 }
 
 function initPage(){
-	var userInfo = JSON.parse(localStorage.getItem('User')),
-		fromPage = QueryString('from');
+		
 	$('.goule-address-submit').on('tap',function(){
 		var name = $('#name').val(),
 			phone = $('#phone').val(),
@@ -16,7 +16,7 @@ function initPage(){
 			hint.show('请输入收货人姓名');
 			return;
 		}
-		if(!(/^1[34578]\d{9}$/.test(phone))){ 
+		if(!(/^1[3465789]\d{9}$/.test(phone))){ 
 	    		hint.show("手机号码有误，请重填");
 	    		return;
 	   	} 
@@ -42,6 +42,9 @@ function initPage(){
 	   		success:function(data){
 	   			if(data.code == 1){
 	   				window.location.href = fromPage+'.html';
+	   			}
+	   			else{
+	 				hint.show(data.msg);
 	   			}
 	   		},
 	   		error:function(err){
