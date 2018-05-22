@@ -1,22 +1,38 @@
+var postPrice;
 function pageInit(){
 	var id = value = QueryString("id");
 	load.show();
 	$.ajax({
-		type:"GET",
-		url:config.SERVER+"/getGoodDetail",
-		data:{
-			xtoken:xtoken,
-			goodid:id
-		},
+		type:"get",
+		url:config.SERVER + "/getPostprice",
 		async:true,
+		data:{
+			xtoken:xtoken
+		},
 		success:function(data){
-			load.hide();
-			produceGoodsInfoPage(data.data);
-			$('#buy-now').on('tap',function(){
-				buyGoods(data.data.good);
-			});
-			$('#add-shopping-car').on('tap',function(){
-				addShoppingCar(data.data.good);
+			postPrice = data.data;
+			$.ajax({
+				type:"GET",
+				url:config.SERVER+"/getGoodDetail",
+				data:{
+					xtoken:xtoken,
+					goodid:id
+				},
+				async:true,
+				success:function(data){
+					load.hide();
+					produceGoodsInfoPage(data.data);
+					$('#buy-now').on('tap',function(){
+						buyGoods(data.data.good);
+					});
+					$('#add-shopping-car').on('tap',function(){
+						addShoppingCar(data.data.good);
+					});
+				},
+				error:function(){
+					load.hide();
+					$('.goule-search-container').attr('data-page',1);
+				}
 			});
 		},
 		error:function(){
@@ -24,6 +40,7 @@ function pageInit(){
 			$('.goule-search-container').attr('data-page',1);
 		}
 	});
+	
 }
 
 function produceGoodsInfoPage(data){
@@ -89,7 +106,7 @@ function produceBaseInfo(data){
 		sendPrice;
 		
 	if(data.price < 60){
-		sendPrice = '5元(单次购物满60元包邮)';
+		sendPrice = postPrice+'元(单次购物满60元包邮)';
 	}
 	else{
 		sendPrice = '包邮';

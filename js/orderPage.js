@@ -1,4 +1,4 @@
-var dataStatic,addressId,nonceStr,timestamp;
+var dataStatic,addressId,nonceStr,timestamp,postPrice;
 
 function getJSONValue(){
 	var data = JSON.parse(localStorage.getItem('newOrder'));
@@ -93,8 +93,8 @@ function renderOrder(data){
 		totalPrice += Number(obj.count)*Number(obj.goodsInfo.singlePrice)
 	});
 	if(totalPrice<60){
-		$('#sendPrice').html('5元(单次购物满60元包邮)');
-		totalPrice += 5;
+		$('#sendPrice').html(postPrice+'元(单次购物满60元包邮)');
+		totalPrice += Number(postPrice);
 	}
 	else{
 		$('#sendPrice').html('包邮');
@@ -163,8 +163,8 @@ function calculatePrice(){
 		totalPrice += Number(obj.count)*Number(obj.goodsInfo.singlePrice);
 	});
 	if(totalPrice<60){
-		$('#sendPrice').html('5元(单次购物满60元包邮)');
-		totalPrice += 5;
+		$('#sendPrice').html(postPrice+'元(单次购物满60元包邮)');
+		totalPrice += postPrice;
 	}
 	else{
 		$('#sendPrice').html('包邮');
@@ -239,10 +239,28 @@ setTimeout(function(){
 		$('.goule-order-pay-footer').on('tap',checkOrder);
 },1000);
 //	}
+	load.show();
 	dataStatic = getJSONValue();
-	renderOrder(dataStatic);
-	initNumSelect();
-	initAddress();
+	$.ajax({
+		type:"get",
+		url:config.SERVER + "/getPostprice",
+		async:true,
+		data:{
+			xtoken:xtoken
+		},
+		success:function(data){
+			load.hide();
+			postPrice = data.data;
+			renderOrder(dataStatic);
+			initNumSelect();
+			initAddress();
+		},
+		error:function(){
+			load.hide();
+			hint.show('获取商品数据失败');
+		}
+	});
+	
 }
 
 function initKeyBorad(){
