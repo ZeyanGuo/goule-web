@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="15e59940-17ef-4567-84cd-bb30e32fc6cf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/queryClassify.css" afterPath="$PROJECT_DIR$/css/queryClassify.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/goodsInformation.html" afterPath="$PROJECT_DIR$/goodsInformation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/goodsInformation.js" afterPath="$PROJECT_DIR$/js/goodsInformation.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,6 +35,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -257,12 +257,20 @@
       <workItem from="1526194563052" duration="2111000" />
       <workItem from="1526257345346" duration="3975000" />
       <workItem from="1526299608501" duration="667000" />
-      <workItem from="1526382524871" duration="2076000" />
+      <workItem from="1526382524871" duration="2714000" />
     </task>
+    <task id="LOCAL-00001" summary="[FIX]修复部分页面显示的问题">
+      <created>1526384621381</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1526384621381</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19090000" />
+    <option name="totallyTimeSpent" value="19728000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -293,6 +301,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[FIX]修复部分页面显示的问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FIX]修复部分页面显示的问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

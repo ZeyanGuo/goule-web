@@ -1,5 +1,6 @@
 var userInfo = JSON.parse(localStorage.getItem('User')),
-	timestamp,nonceStr;
+	timestamp,nonceStr,postPrice;
+
 function getAjaxData(){
 	load.show();
 	var id = QueryString('id');
@@ -14,6 +15,7 @@ function getAjaxData(){
 		success:function(data){
 			load.hide();
 			if(data.code == 1){
+				postPrice = (data.data.order.postprice / 100).toFixed(2);
 				renderPage(data.data);
 			}else{
 				hint.show(data.msg);
@@ -36,8 +38,8 @@ function renderPage(data){
 }
 
 function addGoods(obj){
-	var singlePrice =obj.produce.price.toFixed(2),
-		totalPrice = (Number(obj.produce.price)*Number(obj.produce.goodnum)).toFixed(2);
+	var singlePrice =(obj.produce.price / Number(obj.produce.goodnum)).toFixed(2),
+		totalPrice = (Number(obj.produce.price)).toFixed(2);
 	var html = `<div class="goule-order-base-info" data-id = "${obj.produce.goodid}">
 						<img src="${obj.thumbnail}" />
 						<div class="goule-order-goods-baseInfo">
@@ -133,7 +135,7 @@ function renderOther(obj){
 	
 	totalPrice = obj.order.price;
 	if(totalPrice<60){
-		$('#sendPrice').html('5元');
+		$('#sendPrice').html(postPrice + '元');
 	}
 	else{
 		$('#sendPrice').html('包邮');
@@ -262,7 +264,6 @@ function initImgClick(){
 
 function initPage(){
 	getAjaxData();
-	
 }
 
 function pay(data){   
